@@ -1,0 +1,893 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Linguas</title>
+  <meta name="theme-color" content="#1e293b">
+  <meta name="color-scheme" content="dark">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Linguas">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" href="icons/favicon.png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0f172a; --surface: #1e293b; --surface2: #273549; --border: #334155;
+      --text: #e2e8f0; --text-muted: #94a3b8; --text-dim: #64748b;
+      --en: #3b82f6; --es: #eab308; --it: #22c55e; --pt: #94a3b8;
+      --danger: #ef4444; --warn: #f97316; --success: #22c55e;
+      --radius: 10px; --trans: 150ms ease;
+    }
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', system-ui, sans-serif; font-size: 15px; line-height: 1.6; min-height: 100vh; -webkit-tap-highlight-color: transparent; overscroll-behavior-y: none; }
+    #main-nav { background: var(--surface); border-bottom: 1px solid var(--border); display: flex; align-items: center; padding: 0 20px; gap: 4px; position: sticky; top: 0; z-index: 100; }
+    #main-nav .app-title { font-weight: 700; font-size: 18px; margin-right: 20px; }
+    .nav-btn { background: none; border: none; color: var(--text-muted); cursor: pointer; padding: 14px 16px; font-size: 14px; font-weight: 500; border-bottom: 2px solid transparent; transition: var(--trans); }
+    .nav-btn:hover { color: var(--text); }
+    .nav-btn.active { color: var(--text); border-bottom-color: var(--en); }
+    main { max-width: 780px; margin: 0 auto; padding: 24px 16px; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 16px; }
+    .card-title { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--text-muted); margin-bottom: 12px; }
+    .stat-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-bottom: 16px; }
+    .stat-card { background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 16px; text-align: center; }
+    .stat-card .stat-label { font-size: 11px; color: var(--text-muted); margin-bottom: 6px; }
+    .stat-card .stat-value { font-size: 28px; font-weight: 700; }
+    .stat-card.lang-en .stat-value { color: var(--en); } .stat-card.lang-es .stat-value { color: var(--es); } .stat-card.lang-it .stat-value { color: var(--it); }
+    .btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border: none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; transition: var(--trans); }
+    .btn-primary { background: var(--en); color: white; } .btn-primary:hover { opacity: .9; }
+    .btn-secondary { background: var(--surface2); color: var(--text); border: 1px solid var(--border); } .btn-secondary:hover { background: var(--border); }
+    .session-progress { font-size: 12px; color: var(--text-muted); margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; }
+    .progress-bar-wrap { flex:1; height:4px; background:var(--border); border-radius:2px; margin:0 12px; }
+    .progress-bar { height:100%; background:var(--en); border-radius:2px; transition:width .3s; }
+    .lang-row { padding: 14px 0; border-bottom: 1px solid var(--border); }
+    .lang-row:last-of-type { border-bottom: none; }
+    .lang-header { display: flex; align-items: baseline; gap: 10px; margin-bottom: 8px; }
+    .lang-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; padding: 2px 6px; border-radius: 4px; flex-shrink: 0; }
+    .lang-tag.lang-pt { background: rgba(148,163,184,.15); color: var(--pt); }
+    .lang-tag.lang-en { background: rgba(59,130,246,.15); color: var(--en); }
+    .lang-tag.lang-es { background: rgba(234,179,8,.15); color: var(--es); }
+    .lang-tag.lang-it { background: rgba(34,197,94,.15); color: var(--it); }
+    .sentence-text { font-size: 18px; line-height: 1.9; }
+    .pt-anchor { color: var(--pt); font-weight: 500; }
+    .target-word { text-underline-offset: 4px; cursor: help; font-weight: 500; }
+    .target-word:hover { opacity: .8; }
+    .target-word:focus { outline: 2px solid currentColor; border-radius: 2px; }
+    .ff-marker { font-size: 11px; color: #f87171; margin-left: 1px; vertical-align: super; }
+    .rating-row { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+    .rating-btn { flex: 1; min-width: 72px; padding: 8px 6px; border: none; border-radius: 6px; color: white; font-size: 13px; font-weight: 500; cursor: pointer; transition: var(--trans); display: flex; flex-direction: column; align-items: center; gap: 2px; }
+    .rating-btn:hover { filter: brightness(1.12); } .rating-btn:active { transform: scale(.97); }
+    .btn-interval { font-size: 10px; opacity: .75; }
+    .r-again { background: #dc2626; } .r-hard { background: #ea580c; } .r-good { background: #16a34a; } .r-easy { background: #2563eb; }
+    .undo-row { margin-top: 12px; display: flex; justify-content: flex-end; }
+    .undo-btn { background: transparent; border: 1px solid var(--border); color: var(--text-muted); font-size: 12px; cursor: pointer; padding: 4px 12px; border-radius: 4px; transition: var(--trans); }
+    .undo-btn:hover { background: var(--surface2); color: var(--text); }
+    .session-end { text-align: center; padding: 40px 20px; }
+    .session-end h2 { font-size: 28px; margin-bottom: 12px; } .session-end p { color: var(--text-muted); margin-bottom: 24px; }
+    #tooltip { position: fixed; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; font-size: 13px; line-height: 1.5; max-width: 280px; z-index: 1000; pointer-events: none; box-shadow: 0 4px 20px rgba(0,0,0,.4); }
+    .tt-lemma { font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+    .tt-translation { color: var(--text-muted); }
+    .tt-meta { color: var(--text-dim); font-size: 12px; margin-top: 4px; }
+    .tt-ff { color: #f87171; font-size: 12px; margin-top: 6px; border-top: 1px solid var(--border); padding-top: 6px; }
+    .tt-mature { color: var(--warn); font-size: 11px; margin-bottom: 4px; }
+    #toast-container { position: fixed; bottom: 20px; right: 20px; display: flex; flex-direction: column; gap: 8px; z-index: 2000; }
+    .toast { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; font-size: 13px; max-width: 320px; animation: slideIn .2s ease; }
+    .toast.warn { border-color: var(--warn); } .toast.success { border-color: var(--success); } .toast.error { border-color: var(--danger); }
+    @keyframes slideIn { from { opacity:0; transform: translateX(20px); } to { opacity:1; transform:none; } }
+    .warning-banner { background: #7f1d1d; color: #fca5a5; padding: 10px 20px; font-size: 13px; text-align: center; }
+    .settings-section { margin-bottom: 24px; }
+    .settings-section h3 { font-size: 14px; font-weight: 600; color: var(--text-muted); margin-bottom: 12px; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+    .setting-row { display: flex; align-items: center; justify-content: space-between; padding: 8px 0; gap: 16px; }
+    .setting-label { font-size: 14px; }
+    .setting-desc { font-size: 12px; color: var(--text-muted); }
+    .setting-control { flex-shrink: 0; }
+    .setting-control input[type=number], .setting-control input[type=text] { background: var(--surface2); border: 1px solid var(--border); color: var(--text); border-radius: 6px; padding: 6px 10px; font-size: 14px; width: 100px; }
+    .setting-control input[type=color] { width: 50px; height: 34px; padding: 2px; cursor: pointer; border-radius: 6px; border: 1px solid var(--border); background: var(--surface2); }
+    .lang-toggle { display: flex; gap: 8px; }
+    .lang-toggle button { padding: 6px 14px; border-radius: 6px; font-size: 13px; font-weight: 500; cursor: pointer; border: 1px solid var(--border); background: var(--surface2); color: var(--text-muted); transition: var(--trans); }
+    .lang-toggle button.active.en { background: rgba(59,130,246,.2); color: var(--en); border-color: var(--en); }
+    .lang-toggle button.active.es { background: rgba(234,179,8,.2); color: var(--es); border-color: var(--es); }
+    .lang-toggle button.active.it { background: rgba(34,197,94,.2); color: var(--it); border-color: var(--it); }
+    .retention-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    .retention-table th { color: var(--text-muted); font-weight: 500; padding: 6px 12px; text-align: left; border-bottom: 1px solid var(--border); }
+    .retention-table td { padding: 8px 12px; }
+    .retention-table tr:nth-child(even) td { background: var(--surface2); }
+    .dashboard-start { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+    .total-due { font-size: 14px; color: var(--text-muted); }
+    .loading { text-align: center; padding: 60px 20px; color: var(--text-muted); }
+    .meta-badge { font-size: 11px; color: var(--text-dim); margin-top: 12px; }
+    @media (max-width:600px) { .stat-grid { grid-template-columns: 1fr 1fr; } .stat-grid .stat-card:last-child { grid-column: span 2; } .rating-btn { min-width: 60px; } }
+    /* ── Celular / PWA ── */
+    @media (max-width:600px) {
+      #main-nav { position: fixed; top: auto; bottom: 0; left: 0; right: 0; padding: 0 0 env(safe-area-inset-bottom); gap: 0; border-bottom: none; border-top: 1px solid var(--border); }
+      #main-nav .app-title { display: none; }
+      .nav-btn { flex: 1; padding: 12px 4px 14px; font-size: 13px; border-bottom: none; border-top: 2px solid transparent; }
+      .nav-btn.active { border-top-color: var(--en); }
+      main { padding: calc(16px + env(safe-area-inset-top)) 12px calc(84px + env(safe-area-inset-bottom)); }
+      .card { padding: 16px; }
+      .btn { min-height: 44px; }
+      .rating-row { gap: 6px; }
+      .rating-btn { min-height: 56px; font-size: 14px; padding: 10px 4px; }
+      .undo-btn { min-height: 36px; padding: 6px 14px; }
+      .sentence-text { font-size: 19px; }
+      .dashboard-start { flex-wrap: wrap; }
+      .setting-row { flex-wrap: wrap; gap: 8px; }
+      .lang-toggle { flex-wrap: wrap; }
+      .lang-toggle button { min-height: 40px; }
+      .retention-table { font-size: 13px; }
+      .retention-table th, .retention-table td { padding: 6px 8px; }
+      #toast-container { left: 12px; right: 12px; bottom: calc(72px + env(safe-area-inset-bottom)); }
+      .toast { max-width: none; }
+      #tooltip { max-width: calc(100vw - 24px); }
+    }
+
+  </style>
+  <script type="importmap">{"imports":{"ts-fsrs":"./vendor/ts-fsrs.mjs"}}</script>
+</head>
+<body>
+  <div id="private-banner"></div>
+  <nav id="main-nav">
+    <span class="app-title">🌐 Linguas</span>
+    <button class="nav-btn active" data-view="dashboard">📊 Dashboard</button>
+    <button class="nav-btn" data-view="session">▶ Sessão</button>
+    <button class="nav-btn" data-view="settings">⚙ Config</button>
+  </nav>
+  <main>
+    <div id="view-dashboard"><div class="loading">Carregando…</div></div>
+    <div id="view-session" hidden></div>
+    <div id="view-settings" hidden></div>
+  </main>
+  <div id="toast-container"></div>
+  <div id="tooltip" hidden></div>
+  <script type="module">import { fsrs, generatorParameters } from 'ts-fsrs';
+
+// ── FEATURE FLAGS ──────────────────────────────────────────────────────────
+const FEATURES = {
+  DEBUG_LOG: false,
+  SHOW_INTERNAL_IDS: false,
+  MOCK_TODAY: null,
+  DISABLE_ANTI_INTERFERENCE: false,
+};
+
+// ── CORPUS INLINE (fallback para file://) ──────────────────────────────────
+const CORPUS_INLINE = {"version":"1.0","generated_at":"2026-04-20","concepts":[{"id":"c0001","cefr":"A1","theme":["família","cotidiano"],"cognacy":"high","false_friend":false,"false_friend_note":null,"sentences":{"pt":{"text":"Minha mãe trabalha em casa.","tokens":["Minha","mãe","trabalha","em","casa."],"targets":[{"token_index":1,"lemma":"mãe","pos":"noun","meta":{"gender":"f","number":"sg"}},{"token_index":2,"lemma":"trabalhar","pos":"verb","meta":{"tense":"present","person":"3sg"}}]},"en":{"text":"My mother works from home.","tokens":["My","mother","works","from","home."],"targets":[{"token_index":1,"lemma":"mother","pos":"noun","meta":{}},{"token_index":2,"lemma":"work","pos":"verb","meta":{"tense":"present","person":"3sg"}}]},"es":{"text":"Mi madre trabaja en casa.","tokens":["Mi","madre","trabaja","en","casa."],"targets":[{"token_index":1,"lemma":"madre","pos":"noun","meta":{"gender":"f","number":"sg"}},{"token_index":2,"lemma":"trabajar","pos":"verb","meta":{"tense":"present","person":"3sg"}}]},"it":{"text":"Mia madre lavora a casa.","tokens":["Mia","madre","lavora","a","casa."],"targets":[{"token_index":1,"lemma":"madre","pos":"noun","meta":{"gender":"f","number":"sg"}},{"token_index":2,"lemma":"lavorare","pos":"verb","meta":{"tense":"present","person":"3sg"}}]}}},{"id":"c0002","cefr":"A1","theme":["corpo"],"cognacy":"high","false_friend":false,"false_friend_note":null,"sentences":{"pt":{"text":"A mão direita está fria.","tokens":["A","mão","direita","está","fria."],"targets":[{"token_index":1,"lemma":"mão","pos":"noun","meta":{"gender":"f","number":"sg"}}]},"en":{"text":"The right hand is cold.","tokens":["The","right","hand","is","cold."],"targets":[{"token_index":2,"lemma":"hand","pos":"noun","meta":{}}]},"es":{"text":"La mano derecha está fría.","tokens":["La","mano","derecha","está","fría."],"targets":[{"token_index":1,"lemma":"mano","pos":"noun","meta":{"gender":"f","number":"sg"}}]},"it":{"text":"La mano destra è fredda.","tokens":["La","mano","destra","è","fredda."],"targets":[{"token_index":1,"lemma":"mano","pos":"noun","meta":{"gender":"f","number":"sg"}}]}}},{"id":"c0003","cefr":"A1","theme":["família"],"cognacy":"high","false_friend":false,"false_friend_note":null,"sentences":{"pt":{"text":"Meu pai come uma maçã.","tokens":["Meu","pai","come","uma","maçã."],"targets":[{"token_index":1,"lemma":"pai","pos":"noun","meta":{"gender":"m","number":"sg"}},{"token_index":2,"lemma":"comer","pos":"verb","meta":{"tense":"present","person":"3sg"}},{"token_index":4,"lemma":"maçã","pos":"noun","meta":{"gender":"f","number":"sg"}}]},"en":{"text":"My father eats an apple.","tokens":["My","father","eats","an","apple."],"targets":[{"token_index":1,"lemma":"father","pos":"noun","meta":{}},{"token_index":2,"lemma":"eat","pos":"verb","meta":{"tense":"present","person":"3sg"}},{"token_index":4,"lemma":"apple","pos":"noun","meta":{}}]},"es":{"text":"Mi padre come una manzana.","tokens":["Mi","padre","come","una","manzana."],"targets":[{"token_index":1,"lemma":"padre","pos":"noun","meta":{"gender":"m","number":"sg"}},{"token_index":2,"lemma":"comer","pos":"verb","meta":{"tense":"present","person":"3sg"}},{"token_index":4,"lemma":"manzana","pos":"noun","meta":{"gender":"f","number":"sg"}}]},"it":{"text":"Mio padre mangia una mela.","tokens":["Mio","padre","mangia","una","mela."],"targets":[{"token_index":1,"lemma":"padre","pos":"noun","meta":{"gender":"m","number":"sg"}},{"token_index":2,"lemma":"mangiare","pos":"verb","meta":{"tense":"present","person":"3sg"}},{"token_index":4,"lemma":"mela","pos":"noun","meta":{"gender":"f","number":"sg"}}]}}},{"id":"c0004","cefr":"A1","theme":["casa"],"cognacy":"high","false_friend":false,"false_friend_note":null,"sentences":{"pt":{"text":"A porta da cozinha está aberta.","tokens":["A","porta","da","cozinha","está","aberta."],"targets":[{"token_index":1,"lemma":"porta","pos":"noun","meta":{"gender":"f","number":"sg"}},{"token_index":3,"lemma":"cozinha","pos":"noun","meta":{"gender":"f","number":"sg"}}]},"en":{"text":"The kitchen door is open.","tokens":["The","kitchen","door","is","open."],"targets":[{"token_index":2,"lemma":"door","pos":"noun","meta":{}},{"token_index":1,"lemma":"kitchen","pos":"noun","meta":{}}]},"es":{"text":"La puerta de la cocina está abierta.","tokens":["La","puerta","de","la","cocina","está","abierta."],"targets":[{"token_index":1,"lemma":"puerta","pos":"noun","meta":{"gender":"f","number":"sg"}},{"token_index":4,"lemma":"cocina","pos":"noun","meta":{"gender":"f","number":"sg"}}]},"it":{"text":"La porta della cucina è aperta.","tokens":["La","porta","della","cucina","è","aperta."],"targets":[{"token_index":1,"lemma":"porta","pos":"noun","meta":{"gender":"f","number":"sg"}},{"token_index":3,"lemma":"cucina","pos":"noun","meta":{"gender":"f","number":"sg"}}]}}},{"id":"c0005","cefr":"A1","theme":["números","cores"],"cognacy":"medium","false_friend":false,"false_friend_note":null,"sentences":{"pt":{"text":"Eu tenho dois gatos pretos.","tokens":["Eu","tenho","dois","gatos","pretos."],"targets":[{"token_index":1,"lemma":"ter","pos":"verb","meta":{"tense":"present","person":"1sg"}},{"token_index":3,"lemma":"gato","pos":"noun","meta":{"gender":"m","number":"pl"}},{"token_index":4,"lemma":"preto","pos":"adj","meta":{"gender":"m","number":"pl"}}]},"en":{"text":"I have two black cats.","tokens":["I","have","two","black","cats."],"targets":[{"token_index":1,"lemma":"have","pos":"verb","meta":{"tense":"present","person":"1sg"}},{"token_index":4,"lemma":"cat","pos":"noun","meta":{}},{"token_index":3,"lemma":"black","pos":"adj","meta":{}}]},"es":{"text":"Tengo dos gatos negros.","tokens":["Tengo","dos","gatos","negros."],"targets":[{"token_index":0,"lemma":"tener","pos":"verb","meta":{"tense":"present","person":"1sg"}},{"token_index":2,"lemma":"gato","pos":"noun","meta":{"gender":"m","number":"pl"}},{"token_index":3,"lemma":"negro","pos":"adj","meta":{"gender":"m","number":"pl"}}]},"it":{"text":"Ho due gatti neri.","tokens":["Ho","due","gatti","neri."],"targets":[{"token_index":0,"lemma":"avere","pos":"verb","meta":{"tense":"present","person":"1sg"}},{"token_index":2,"lemma":"gatto","pos":"noun","meta":{"gender":"m","number":"pl"}},{"token_index":3,"lemma":"nero","pos":"adj","meta":{"gender":"m","number":"pl"}}]}}},{"id":"c0006","cefr":"A1","theme":["comida"],"cognacy":"high","false_friend":false,"false_friend_note":null,"sentences":{"pt":{"text":"Eu bebo café pela manhã.","tokens":["Eu","bebo","café","pela","manhã."],"targets":[{"token_index":1,"lemma":"beber","pos":"verb","meta":{"tense":"present","person":"1sg"}},{"token_index":2,"lemma":"café","pos":"noun","meta":{"gender":"m","number":"sg"}}]},"en":{"text":"I drink coffee in the morning.","tokens":["I","drink","coffee","in","the","morning."],"targets":[{"token_index":1,"lemma":"drink","pos":"verb","meta":{"tense":"present","person":"1sg"}},{"token_index":2,"lemma":"coffee","pos":"noun","meta":{}}]},"es":{"text":"Bebo café por la mañana.","tokens":["Bebo","café","por","la","mañana."],"targets":[{"token_index":0,"lemma":"beber","pos":"verb","meta":{"tense":"present","person":"1sg"}},{"token_index":1,"lemma":"café","pos":"noun","meta":{"gender":"m","number":"sg"}}]},"it":{"text":"Bevo caffè la mattina.","tokens":["Bevo","caffè","la","mattina."],"targets":[{"token_index":0,"lemma":"bere","pos":"verb","meta":{"tense":"present","person":"1sg"}},{"token_index":1,"lemma":"caffè","pos":"noun","meta":{"gender":"m","number":"sg"}}]}}},{"id":"c0007","cefr":"A1","theme":["corpo"],"cognacy":"medium","false_friend":false,"false_friend_note":null,"sentences":{"pt":{"text":"Os olhos dela são azuis.","tokens":["Os","olhos","dela","são","azuis."],"targets":[{"token_index":1,"lemma":"olho","pos":"noun","meta":{"gender":"m","number":"pl"}},{"token_index":4,"lemma":"azul","pos":"adj","meta":{"gender":"m","number":"pl"}}]},"en":{"text":"Her eyes are blue.","tokens":["Her","eyes","are","blue."],"targets":[{"token_index":1,"lemma":"eye","pos":"noun","meta":{}},{"token_index":3,"lemma":"blue","pos":"adj","meta":{}}]},"es":{"text":"Sus ojos son azules.","tokens":["Sus","ojos","son","azules."],"targets":[{"token_index":1,"lemma":"ojo","pos":"noun","meta":{"gender":"m","number":"pl"}},{"token_index":3,"lemma":"azul","pos":"adj","meta":{"gender":"m","number":"pl"}}]},"it":{"text":"I suoi occhi sono azzurri.","tokens":["I","suoi","occhi","sono","azzurri."],"targets":[{"token_index":2,"lemma":"occhio","pos":"noun","meta":{"gender":"m","number":"pl"}},{"token_index":4,"lemma":"azzurro","pos":"adj","meta":{"gender":"m","number":"pl"}}]}}},{"id":"c0008","cefr":"A1","theme":["casa"],"cognacy":"high","false_friend":false,"false_friend_note":null,"sentences":{"pt":{"text":"A casa tem três quartos.","tokens":["A","casa","tem","três","quartos."],"targets":[{"token_index":1,"lemma":"casa","pos":"noun","meta":{"gender":"f","number":"sg"}},{"token_index":2,"lemma":"ter","pos":"verb","meta":{"tense":"present","person":"3sg"}}]},"en":{"text":"The house has three bedrooms.","tokens":["The","house","has","three","bedrooms."],"targets":[{"token_index":1,"lemma":"house","pos":"noun","meta":{}},{"token_index":2,"lemma":"have","pos":"verb","meta":{"tense":"present","person":"3sg"}}]},"es":{"text":"La casa tiene tres habitaciones.","tokens":["La","casa","tiene","tres","habitaciones."],"targets":[{"token_index":1,"lemma":"casa","pos":"noun","meta":{"gender":"f","number":"sg"}},{"token_index":2,"lemma":"tener","pos":"verb","meta":{"tense":"present","person":"3sg"}}]},"it":{"text":"La casa ha tre camere.","tokens":["La","casa","ha","tre","camere."],"targets":[{"token_index":1,"lemma":"casa","pos":"noun","meta":{"gender":"f","number":"sg"}},{"token_index":2,"lemma":"avere","pos":"verb","meta":{"tense":"present","person":"3sg"}}]}}},{"id":"c0009","cefr":"A1","theme":["comida"],"cognacy":"high","false_friend":false,"false_friend_note":null,"sentences":{"pt":{"text":"O pão está na mesa.","tokens":["O","pão","está","na","mesa."],"targets":[{"token_index":1,"lemma":"pão","pos":"noun","meta":{"gender":"m","number":"sg"}},{"token_index":4,"lemma":"mesa","pos":"noun","meta":{"gender":"f","number":"sg"}}]},"en":{"text":"The bread is on the table.","tokens":["The","bread","is","on","the","table."],"targets":[{"token_index":1,"lemma":"bread","pos":"noun","meta":{}},{"token_index":5,"lemma":"table","pos":"noun","meta":{}}]},"es":{"text":"El pan está en la mesa.","tokens":["El","pan","está","en","la","mesa."],"targets":[{"token_index":1,"lemma":"pan","pos":"noun","meta":{"gender":"m","number":"sg"}},{"token_index":5,"lemma":"mesa","pos":"noun","meta":{"gender":"f","number":"sg"}}]},"it":{"text":"Il pane è sul tavolo.","tokens":["Il","pane","è","sul","tavolo."],"targets":[{"token_index":1,"lemma":"pane","pos":"noun","meta":{"gender":"m","number":"sg"}},{"token_index":4,"lemma":"tavolo","pos":"noun","meta":{"gender":"m","number":"sg"}}]}}},{"id":"c0010","cefr":"A1","theme":["família"],"cognacy":"high","false_friend":false,"false_friend_note":null,"sentences":{"pt":{"text":"Minha irmã estuda muito.","tokens":["Minha","irmã","estuda","muito."],"targets":[{"token_index":1,"lemma":"irmã","pos":"noun","meta":{"gender":"f","number":"sg"}},{"token_index":2,"lemma":"estudar","pos":"verb","meta":{"tense":"present","person":"3sg"}}]},"en":{"text":"My sister studies a lot.","tokens":["My","sister","studies","a","lot."],"targets":[{"token_index":1,"lemma":"sister","pos":"noun","meta":{}},{"token_index":2,"lemma":"study","pos":"verb","meta":{"tense":"present","person":"3sg"}}]},"es":{"text":"Mi hermana estudia mucho.","tokens":["Mi","hermana","estudia","mucho."],"targets":[{"token_index":1,"lemma":"hermana","pos":"noun","meta":{"gender":"f","number":"sg"}},{"token_index":2,"lemma":"estudiar","pos":"verb","meta":{"tense":"present","person":"3sg"}}]},"it":{"text":"Mia sorella studia molto.","tokens":["Mia","sorella","studia","molto."],"targets":[{"token_index":1,"lemma":"sorella","pos":"noun","meta":{"gender":"f","number":"sg"}},{"token_index":2,"lemma":"studiare","pos":"verb","meta":{"tense":"present","person":"3sg"}}]}}},{"id":"c0011","cefr":"A1","theme":["casa"],"cognacy":"high","false_friend":false,"false_friend_note":null,"sentences":{"pt":{"text":"A janela do quarto é grande.","tokens":["A","janela","do","quarto","é","grande."],"targets":[{"token_index":1,"lemma":"janela","pos":"noun","meta":{"gender":"f","number":"sg"}},{"token_index":5,"lemma":"grande","pos":"adj","meta":{"gender":"f","number":"sg"}}]},"en":{"text":"The bedroom window is big.","tokens":["The","bedroom","window","is","big."],"targets":[{"token_index":2,"lemma":"window","pos":"noun","meta":{}},{"token_index":4,"lemma":"big","pos":"adj","meta":{}}]},"es":{"text":"La ventana del cuarto es grande.","tokens":["La","ventana","del","cuarto","es","grande."],"targets":[{"token_index":1,"lemma":"ventana","pos":"noun","meta":{"gender":"f","number":"sg"}},{"token_index":5,"lemma":"grande","pos":"adj","meta":{"gender":"f","number":"sg"}}]},"it":{"text":"La finestra della camera è grande.","tokens":["La","finestra","della","camera","è","grande."],"targets":[{"token_index":1,"lemma":"finestra","pos":"noun","meta":{"gender":"f","number":"sg"}},{"token_index":5,"lemma":"grande","pos":"adj","meta":{"gender":"f","number":"sg"}}]}}},{"id":"c0012","cefr":"A1","theme":["comida"],"cognacy":"high","false_friend":false,"false_friend_note":null,"sentences":{"pt":{"text":"A água está muito fria.","tokens":["A","água","está","muito","fria."],"targets":[{"token_index":1,"lemma":"água","pos":"noun","meta":{"gender":"f","number":"sg"}}]},"en":{"text":"The water is very cold.","tokens":["The","water","is","very","cold."],"targets":[{"token_index":1,"lemma":"water","pos":"noun","meta":{}}]},"es":{"text":"El agua está muy fría.","tokens":["El","agua","está","muy","fría."],"targets":[{"token_index":1,"lemma":"agua","pos":"noun","meta":{"gender":"f","number":"sg"}}]},"it":{"text":"L\u0027acqua è molto fredda.","tokens":["L\u0027acqua","è","molto","fredda."],"targets":[{"token_index":0,"lemma":"acqua","pos":"noun","meta":{"gender":"f","number":"sg"}}]}}},{"id":"c0013","cefr":"A1","theme":["corpo"],"cognacy":"medium","false_friend":false,"false_friend_note":null,"sentences":{"pt":{"text":"O cabelo dele é curto.","tokens":["O","cabelo","dele","é","curto."],"targets":[{"token_index":1,"lemma":"cabelo","pos":"noun","meta":{"gender":"m","number":"sg"}},{"token_index":4,"lemma":"curto","pos":"adj","meta":{"gender":"m","number":"sg"}}]},"en":{"text":"His hair is short.","tokens":["His","hair","is","short."],"targets":[{"token_index":1,"lemma":"hair","pos":"noun","meta":{}},{"token_index":3,"lemma":"short","pos":"adj","meta":{}}]},"es":{"text":"Su pelo es corto.","tokens":["Su","pelo","es","corto."],"targets":[{"token_index":1,"lemma":"pelo","pos":"noun","meta":{"gender":"m","number":"sg"}},{"token_index":3,"lemma":"corto","pos":"adj","meta":{"gender":"m","number":"sg"}}]},"it":{"text":"I suoi capelli sono corti.","tokens":["I","suoi","capelli","sono","corti."],"targets":[{"token_index":2,"lemma":"capello","pos":"noun","meta":{"gender":"m","number":"pl"}},{"token_index":4,"lemma":"corto","pos":"adj","meta":{"gender":"m","number":"pl"}}]}}},{"id":"c0014","cefr":"A1","theme":["família"],"cognacy":"low","false_friend":false,"false_friend_note":null,"sentences":{"pt":{"text":"Meu avô tem setenta anos.","tokens":["Meu","avô","tem","setenta","anos."],"targets":[{"token_index":1,"lemma":"avô","pos":"noun","meta":{"gender":"m","number":"sg"}}]},"en":{"text":"My grandfather is seventy years old.","tokens":["My","grandfather","is","seventy","years","old."],"targets":[{"token_index":1,"lemma":"grandfather","pos":"noun","meta":{}}]},"es":{"text":"Mi abuelo tiene setenta años.","tokens":["Mi","abuelo","tiene","setenta","años."],"targets":[{"token_index":1,"lemma":"abuelo","pos":"noun","meta":{"gender":"m","number":"sg"}}]},"it":{"text":"Mio nonno ha settanta anni.","tokens":["Mio","nonno","ha","settanta","anni."],"targets":[{"token_index":1,"lemma":"nonno","pos":"noun","meta":{"gender":"m","number":"sg"}}]}}},{"id":"c0015","cefr":"A1","theme":["comida"],"cognacy":"high","false_friend":false,"false_friend_note":null,"sentences":{"pt":{"text":"Eu gosto de leite quente.","tokens":["Eu","gosto","de","leite","quente."],"targets":[{"token_index":1,"lemma":"gostar","pos":"verb","meta":{"tense":"present","person":"1sg"}},{"token_index":3,"lemma":"leite","pos":"noun","meta":{"gender":"m","number":"sg"}}]},"en":{"text":"I like warm milk.","tokens":["I","like","warm","milk."],"targets":[{"token_index":1,"lemma":"like","pos":"verb","meta":{"tense":"present","person":"1sg"}},{"token_index":3,"lemma":"milk","pos":"noun","meta":{}}]},"es":{"text":"Me gusta la leche caliente.","tokens":["Me","gusta","la","leche","caliente."],"targets":[{"token_index":1,"lemma":"gustar","pos":"verb","meta":{"tense":"present","person":"3sg"}},{"token_index":3,"lemma":"leche","pos":"noun","meta":{"gender":"f","number":"sg"}}]},"it":{"text":"Mi piace il latte caldo.","tokens":["Mi","piace","il","latte","caldo."],"targets":[{"token_index":1,"lemma":"piacere","pos":"verb","meta":{"tense":"present","person":"3sg"}},{"token_index":3,"lemma":"latte","pos":"noun","meta":{"gender":"m","number":"sg"}}]}}},{"id":"c0016","cefr":"A1","theme":["números"],"cognacy":"high","false_friend":false,"false_friend_note":null,"sentences":{"pt":{"text":"Hoje é o primeiro dia.","tokens":["Hoje","é","o","primeiro","dia."],"targets":[{"token_index":3,"lemma":"primeiro","pos":"adj","meta":{"gender":"m","number":"sg"}},{"token_index":4,"lemma":"dia","pos":"noun","meta":{"gender":"m","number":"sg"}}]},"en":{"text":"Today is the first day.","tokens":["Today","is","the","first","day."],"targets":[{"token_index":3,"lemma":"first","pos":"adj","meta":{}},{"token_index":4,"lemma":"day","pos":"noun","meta":{}}]},"es":{"text":"Hoy es el primer día.","tokens":["Hoy","es","el","primer","día."],"targets":[{"token_index":3,"lemma":"primero","pos":"adj","meta":{"gender":"m","number":"sg"}},{"token_index":4,"lemma":"día","pos":"noun","meta":{"gender":"m","number":"sg"}}]},"it":{"text":"Oggi è il primo giorno.","tokens":["Oggi","è","il","primo","giorno."],"targets":[{"token_index":3,"lemma":"primo","pos":"adj","meta":{"gender":"m","number":"sg"}},{"token_index":4,"lemma":"giorno","pos":"noun","meta":{"gender":"m","number":"sg"}}]}}},{"id":"c0017","cefr":"A1","theme":["cotidiano"],"cognacy":"medium","false_friend":false,"false_friend_note":null,"sentences":{"pt":{"text":"Eu moro em uma cidade pequena.","tokens":["Eu","moro","em","uma","cidade","pequena."],"targets":[{"token_index":1,"lemma":"morar","pos":"verb","meta":{"tense":"present","person":"1sg"}},{"token_index":4,"lemma":"cidade","pos":"noun","meta":{"gender":"f","number":"sg"}}]},"en":{"text":"I live in a small city.","tokens":["I","live","in","a","small","city."],"targets":[{"token_index":1,"lemma":"live","pos":"verb","meta":{"tense":"present","person":"1sg"}},{"token_index":5,"lemma":"city","pos":"noun","meta":{}}]},"es":{"text":"Vivo en una ciudad pequeña.","tokens":["Vivo","en","una","ciudad","pequeña."],"targets":[{"token_index":0,"lemma":"vivir","pos":"verb","meta":{"tense":"present","person":"1sg"}},{"token_index":3,"lemma":"ciudad","pos":"noun","meta":{"gender":"f","number":"sg"}}]},"it":{"text":"Vivo in una città piccola.","tokens":["Vivo","in","una","città","piccola."],"targets":[{"token_index":0,"lemma":"vivere","pos":"verb","meta":{"tense":"present","person":"1sg"}},{"token_index":3,"lemma":"città","pos":"noun","meta":{"gender":"f","number":"sg"}}]}}},{"id":"c0018","cefr":"A1","theme":["cores"],"cognacy":"low","false_friend":false,"false_friend_note":null,"sentences":{"pt":{"text":"O céu está amarelo agora.","tokens":["O","céu","está","amarelo","agora."],"targets":[{"token_index":3,"lemma":"amarelo","pos":"adj","meta":{"gender":"m","number":"sg"}}]},"en":{"text":"The sky is yellow now.","tokens":["The","sky","is","yellow","now."],"targets":[{"token_index":3,"lemma":"yellow","pos":"adj","meta":{}}]},"es":{"text":"El cielo está amarillo ahora.","tokens":["El","cielo","está","amarillo","ahora."],"targets":[{"token_index":3,"lemma":"amarillo","pos":"adj","meta":{"gender":"m","number":"sg"}}]},"it":{"text":"Il cielo è giallo adesso.","tokens":["Il","cielo","è","giallo","adesso."],"targets":[{"token_index":3,"lemma":"giallo","pos":"adj","meta":{"gender":"m","number":"sg"}}]}}},{"id":"c0019","cefr":"A1","theme":["cotidiano"],"cognacy":"high","false_friend":false,"false_friend_note":null,"sentences":{"pt":{"text":"Eu falo português todos os dias.","tokens":["Eu","falo","português","todos","os","dias."],"targets":[{"token_index":1,"lemma":"falar","pos":"verb","meta":{"tense":"present","person":"1sg"}}]},"en":{"text":"I speak Portuguese every day.","tokens":["I","speak","Portuguese","every","day."],"targets":[{"token_index":1,"lemma":"speak","pos":"verb","meta":{"tense":"present","person":"1sg"}}]},"es":{"text":"Hablo portugués todos los días.","tokens":["Hablo","portugués","todos","los","días."],"targets":[{"token_index":0,"lemma":"hablar","pos":"verb","meta":{"tense":"present","person":"1sg"}}]},"it":{"text":"Parlo portoghese tutti i giorni.","tokens":["Parlo","portoghese","tutti","i","giorni."],"targets":[{"token_index":0,"lemma":"parlare","pos":"verb","meta":{"tense":"present","person":"1sg"}}]}}},{"id":"c0020","cefr":"A1","theme":["casa","cotidiano"],"cognacy":"high","false_friend":false,"false_friend_note":null,"sentences":{"pt":{"text":"O livro está sobre a cama.","tokens":["O","livro","está","sobre","a","cama."],"targets":[{"token_index":1,"lemma":"livro","pos":"noun","meta":{"gender":"m","number":"sg"}},{"token_index":5,"lemma":"cama","pos":"noun","meta":{"gender":"f","number":"sg"}}]},"en":{"text":"The book is on the bed.","tokens":["The","book","is","on","the","bed."],"targets":[{"token_index":1,"lemma":"book","pos":"noun","meta":{}},{"token_index":5,"lemma":"bed","pos":"noun","meta":{}}]},"es":{"text":"El libro está sobre la cama.","tokens":["El","libro","está","sobre","la","cama."],"targets":[{"token_index":1,"lemma":"libro","pos":"noun","meta":{"gender":"m","number":"sg"}},{"token_index":5,"lemma":"cama","pos":"noun","meta":{"gender":"f","number":"sg"}}]},"it":{"text":"Il libro è sul letto.","tokens":["Il","libro","è","sul","letto."],"targets":[{"token_index":1,"lemma":"libro","pos":"noun","meta":{"gender":"m","number":"sg"}},{"token_index":4,"lemma":"letto","pos":"noun","meta":{"gender":"m","number":"sg"}}]}}},{"id":"c0021","cefr":"A2","theme":["trabalho"],"cognacy":"high","false_friend":false,"false_friend_note":null,"sentences":{"pt":{"text":"Ontem eu trabalhei até tarde.","tokens":["Ontem","eu","trabalhei","até","tarde."],"targets":[{"token_index":2,"lemma":"trabalhar","pos":"verb","meta":{"tense":"past","person":"1sg"}}]},"en":{"text":"Yesterday I worked until late.","tokens":["Yesterday","I","worked","until","late."],"targets":[{"token_index":2,"lemma":"work","pos":"verb","meta":{"tense":"past","person":"1sg"}}]},"es":{"text":"Ayer he trabajado hasta tarde.","tokens":["Ayer","he","trabajado","hasta","tarde."],"targets":[{"token_index":2,"lemma":"trabajar","pos":"verb","meta":{"tense":"past","person":"1sg"}}]},"it":{"text":"Ieri ho lavorato fino a tardi.","tokens":["Ieri","ho","lavorato","fino","a","tardi."],"targets":[{"token_index":2,"lemma":"lavorare","pos":"verb","meta":{"tense":"past","person":"1sg"}}]}}},{"id":"c0022","cefr":"A2","theme":["cidade"],"cognacy":"high","false_friend":false,"false_friend_note":null,"sentences":{"pt":{"text":"A estação de trem fica perto.","tokens":["A","estação","de","trem","fica","perto."],"targets":[{"token_index":1,"lemma":"estação","pos":"noun","meta":{"gender":"f","number":"sg"}},{"token_index":3,"lemma":"trem","pos":"noun","meta":{"gender":"m","number":"sg"}}]},"en":{"text":"The train station is nearby.","tokens":["The","train","station","is","nearby."],"targets":[{"token_index":2,"lemma":"station","pos":"noun","meta":{}},{"token_index":1,"lemma":"train","pos":"noun","meta":{}}]},"es":{"text":"La estación de tren está cerca.","tokens":["La","estación","de","tren","está","cerca."],"targets":[{"token_index":1,"lemma":"estación","pos":"noun","meta":{"gender":"f","number":"sg"}},{"token_index":3,"lemma":"tren","pos":"noun","meta":{"gender":"m","number":"sg"}}]},"it":{"text":"La stazione del treno è vicina.","tokens":["La","stazione","del","treno","è","vicina."],"targets":[{"token_index":1,"lemma":"stazione","pos":"noun","meta":{"gender":"f","number":"sg"}},{"token_index":3,"lemma":"treno","pos":"noun","meta":{"gender":"m","number":"sg"}}]}}},{"id":"c0023","cefr":"A2","theme":["saúde"],"cognacy":"high","false_friend":false,"false_friend_note":null,"sentences":{"pt":{"text":"O médico vai chegar em breve.","tokens":["O","médico","vai","chegar","em","breve."],"targets":[{"token_index":1,"lemma":"médico","pos":"noun","meta":{"gender":"m","number":"sg"}},{"token_index":3,"lemma":"chegar","pos":"verb","meta":{"tense":"future","person":"3sg"}}]},"en":{"text":"The doctor is going to arrive soon.","tokens":["The","doctor","is","going","to","arrive","soon."],"targets":[{"token_index":1,"lemma":"doctor","pos":"noun","meta":{}},{"token_index":5,"lemma":"arrive","pos":"verb","meta":{"tense":"future","person":"3sg"}}]},"es":{"text":"El médico va a llegar pronto.","tokens":["El","médico","va","a","llegar","pronto."],"targets":[{"token_index":1,"lemma":"médico","pos":"noun","meta":{"gender":"m","number":"sg"}},{"token_index":4,"lemma":"llegar","pos":"verb","meta":{"tense":"future","person":"3sg"}}]},"it":{"text":"Il medico sta per arrivare.","tokens":["Il","medico","sta","per","arrivare."],"targets":[{"token_index":1,"lemma":"medico","pos":"noun","meta":{"gender":"m","number":"sg"}},{"token_index":4,"lemma":"arrivare","pos":"verb","meta":{"tense":"future","person":"3sg"}}]}}},{"id":"c0024","cefr":"A2","theme":["tempo livre"],"cognacy":"medium","false_friend":false,"false_friend_note":null,"sentences":{"pt":{"text":"No domingo eu vou ao cinema.","tokens":["No","domingo","eu","vou","ao","cinema."],"targets":[{"token_index":3,"lemma":"ir","pos":"verb","meta":{"tense":"present","person":"1sg"}},{"token_index":5,"lemma":"cinema","pos":"noun","meta":{"gender":"m","number":"sg"}}]},"en":{"text":"On Sunday I go to the movies.","tokens":["On","Sunday","I","go","to","the","movies."],"targets":[{"token_index":3,"lemma":"go","pos":"verb","meta":{"tense":"present","person":"1sg"}},{"token_index":6,"lemma":"movies","pos":"noun","meta":{}}]},"es":{"text":"El domingo voy al cine.","tokens":["El","domingo","voy","al","cine."],"targets":[{"token_index":2,"lemma":"ir","pos":"verb","meta":{"tense":"present","person":"1sg"}},{"token_index":4,"lemma":"cine","pos":"noun","meta":{"gender":"m","number":"sg"}}]},"it":{"text":"La domenica vado al cinema.","tokens":["La","domenica","vado","al","cinema."],"targets":[{"token_index":2,"lemma":"andare","pos":"verb","meta":{"tense":"present","person":"1sg"}},{"token_index":4,"lemma":"cinema","pos":"noun","meta":{"gender":"m","number":"sg"}}]}}},{"id":"c0025","cefr":"A2","theme":["cotidiano"],"cognacy":"high","false_friend":false,"false_friend_note":null,"sentences":{"pt":{"text":"Amanhã vou comprar pão fresco.","tokens":["Amanhã","vou","comprar","pão","fresco."],"targets":[{"token_index":2,"lemma":"comprar","pos":"verb","meta":{"tense":"future","person":"1sg"}},{"token_index":4,"lemma":"fresco","pos":"adj","meta":{"gender":"m","number":"sg"}}]},"en":{"text":"Tomorrow I will buy fresh bread.","tokens":["Tomorrow","I","will","buy","fresh","bread."],"targets":[{"token_index":3,"lemma":"buy","pos":"verb","meta":{"tense":"future","person":"1sg"}},{"token_index":4,"lemma":"fresh","pos":"adj","meta":{}}]},"es":{"text":"Mañana voy a comprar pan fresco.","tokens":["Mañana","voy","a","comprar","pan","fresco."],"targets":[{"token_index":3,"lemma":"comprar","pos":"verb","meta":{"tense":"future","person":"1sg"}},{"token_index":5,"lemma":"fresco","pos":"adj","meta":{"gender":"m","number":"sg"}}]},"it":{"text":"Domani comprerò pane fresco.","tokens":["Domani","comprerò","pane","fresco."],"targets":[{"token_index":1,"lemma":"comprare","pos":"verb","meta":{"tense":"future","person":"1sg"}},{"token_index":3,"lemma":"fresco","pos":"adj","meta":{"gender":"m","number":"sg"}}]}}},{"id":"c0026","cefr":"A2","theme":["trabalho"],"cognacy":"medium","false_friend":false,"false_friend_note":null,"sentences":{"pt":{"text":"Meu chefe é muito simpático.","tokens":["Meu","chefe","é","muito","simpático."],"targets":[{"token_index":1,"lemma":"chefe","pos":"noun","meta":{"gender":"m","number":"sg"}},{"token_index":4,"lemma":"simpático","pos":"adj","meta":{"gender":"m","number":"sg"}}]},"en":{"text":"My boss is very nice.","tokens":["My","boss","is","very","nice."],"targets":[{"token_index":1,"lemma":"boss","pos":"noun","meta":{}},{"token_index":4,"lemma":"nice","pos":"adj","meta":{}}]},"es":{"text":"Mi jefe es muy simpático.","tokens":["Mi","jefe","es","muy","simpático."],"targets":[{"token_index":1,"lemma":"jefe","pos":"noun","meta":{"gender":"m","number":"sg"}},{"token_index":4,"lemma":"simpático","pos":"adj","meta":{"gender":"m","number":"sg"}}]},"it":{"text":"Il mio capo è molto simpatico.","tokens":["Il","mio","capo","è","molto","simpatico."],"targets":[{"token_index":2,"lemma":"capo","pos":"noun","meta":{"gender":"m","number":"sg"}},{"token_index":5,"lemma":"simpatico","pos":"adj","meta":{"gender":"m","number":"sg"}}]}}},{"id":"c0027","cefr":"A2","theme":["cidade"],"cognacy":"medium","false_friend":false,"false_friend_note":null,"sentences":{"pt":{"text":"A rua principal está cheia hoje.","tokens":["A","rua","principal","está","cheia","hoje."],"targets":[{"token_index":1,"lemma":"rua","pos":"noun","meta":{"gender":"f","number":"sg"}},{"token_index":2,"lemma":"principal","pos":"adj","meta":{"gender":"f","number":"sg"}}]},"en":{"text":"The main street is crowded today.","tokens":["The","main","street","is","crowded","today."],"targets":[{"token_index":2,"lemma":"street","pos":"noun","meta":{}},{"token_index":1,"lemma":"main","pos":"adj","meta":{}}]},"es":{"text":"La calle principal está llena hoy.","tokens":["La","calle","principal","está","llena","hoy."],"targets":[{"token_index":1,"lemma":"calle","pos":"noun","meta":{"gender":"f","number":"sg"}},{"token_index":2,"lemma":"principal","pos":"adj","meta":{"gender":"f","number":"sg"}}]},"it":{"text":"La strada principale è piena oggi.","tokens":["La","strada","principale","è","piena","oggi."],"targets":[{"token_index":1,"lemma":"strada","pos":"noun","meta":{"gender":"f","number":"sg"}},{"token_index":2,"lemma":"principale","pos":"adj","meta":{"gender":"f","number":"sg"}}]}}},{"id":"c0028","cefr":"A2","theme":["saúde"],"cognacy":"medium","false_friend":false,"false_friend_note":null,"sentences":{"pt":{"text":"Eu tomei o remédio esta manhã.","tokens":["Eu","tomei","o","remédio","esta","manhã."],"targets":[{"token_index":1,"lemma":"tomar","pos":"verb","meta":{"tense":"past","person":"1sg"}},{"token_index":3,"lemma":"remédio","pos":"noun","meta":{"gender":"m","number":"sg"}}]},"en":{"text":"I took the medicine this morning.","tokens":["I","took","the","medicine","this","morning."],"targets":[{"token_index":1,"lemma":"take","pos":"verb","meta":{"tense":"past","person":"1sg"}},{"token_index":3,"lemma":"medicine","pos":"noun","meta":{}}]},"es":{"text":"He tomado la medicina esta mañana.","tokens":["He","tomado","la","medicina","esta","mañana."],"targets":[{"token_index":1,"lemma":"tomar","pos":"verb","meta":{"tense":"past","person":"1sg"}},{"token_index":3,"lemma":"medicina","pos":"noun","meta":{"gender":"f","number":"sg"}}]},"it":{"text":"Ho preso la medicina stamattina.","tokens":["Ho","preso","la","medicina","stamattina."],"targets":[{"token_index":1,"lemma":"prendere","pos":"verb","meta":{"tense":"past","person":"1sg"}},{"token_index":3,"lemma":"medicina","pos":"noun","meta":{"gender":"f","number":"sg"}}]}}},{"id":"c0029","cefr":"A2","theme":["tempo livre"],"cognacy":"high","false_friend":false,"false_friend_note":null,"sentences":{"pt":{"text":"Nós dançamos na festa ontem.","tokens":["Nós","dançamos","na","festa","ontem."],"targets":[{"token_index":1,"lemma":"dançar","pos":"verb","meta":{"tense":"past","person":"1pl"}},{"token_index":3,"lemma":"festa","pos":"noun","meta":{"gender":"f","number":"sg"}}]},"en":{"text":"We danced at the party yesterday.","tokens":["We","danced","at","the","party","yesterday."],"targets":[{"token_index":1,"lemma":"dance","pos":"verb","meta":{"tense":"past","person":"1pl"}},{"token_index":4,"lemma":"party","pos":"noun","meta":{}}]},"es":{"text":"Hemos bailado en la fiesta ayer.","tokens":["Hemos","bailado","en","la","fiesta","ayer."],"targets":[{"token_index":1,"lemma":"bailar","pos":"verb","meta":{"tense":"past","person":"1pl"}},{"token_index":4,"lemma":"fiesta","pos":"noun","meta":{"gender":"f","number":"sg"}}]},"it":{"text":"Abbiamo ballato alla festa ieri.","tokens":["Abbiamo","ballato","alla","festa","ieri."],"targets":[{"token_index":1,"lemma":"ballare","pos":"verb","meta":{"tense":"past","person":"1pl"}},{"token_index":3,"lemma":"festa","pos":"noun","meta":{"gender":"f","number":"sg"}}]}}},{"id":"c0030","cefr":"A2","theme":["trabalho","cotidiano"],"cognacy":"low","false_friend":false,"false_friend_note":null,"sentences":{"pt":{"text":"O escritório abre às nove.","tokens":["O","escritório","abre","às","nove."],"targets":[{"token_index":1,"lemma":"escritório","pos":"noun","meta":{"gender":"m","number":"sg"}},{"token_index":2,"lemma":"abrir","pos":"verb","meta":{"tense":"present","person":"3sg"}}]},"en":{"text":"The office opens at nine.","tokens":["The","office","opens","at","nine."],"targets":[{"token_index":1,"lemma":"office","pos":"noun","meta":{}},{"token_index":2,"lemma":"open","pos":"verb","meta":{"tense":"present","person":"3sg"}}]},"es":{"text":"La oficina abre a las nueve.","tokens":["La","oficina","abre","a","las","nueve."],"targets":[{"token_index":1,"lemma":"oficina","pos":"noun","meta":{"gender":"f","number":"sg"}},{"token_index":2,"lemma":"abrir","pos":"verb","meta":{"tense":"present","person":"3sg"}}]},"it":{"text":"L\u0027ufficio apre alle nove.","tokens":["L\u0027ufficio","apre","alle","nove."],"targets":[{"token_index":0,"lemma":"ufficio","pos":"noun","meta":{"gender":"m","number":"sg"}},{"token_index":1,"lemma":"aprire","pos":"verb","meta":{"tense":"present","person":"3sg"}}]}}},{"id":"c0031","cefr":"A2","theme":["cidade"],"cognacy":"low","false_friend":false,"false_friend_note":null,"sentences":{"pt":{"text":"A loja fica ao lado da praça.","tokens":["A","loja","fica","ao","lado","da","praça."],"targets":[{"token_index":1,"lemma":"loja","pos":"noun","meta":{"gender":"f","number":"sg"}},{"token_index":6,"lemma":"praça","pos":"noun","meta":{"gender":"f","number":"sg"}}]},"en":{"text":"The shop is next to the square.","tokens":["The","shop","is","next","to","the","square."],"targets":[{"token_index":1,"lemma":"shop","pos":"noun","meta":{}},{"token_index":6,"lemma":"square","pos":"noun","meta":{}}]},"es":{"text":"La tienda está al lado de la plaza.","tokens":["La","tienda","está","al","lado","de","la","plaza."],"targets":[{"token_index":1,"lemma":"tienda","pos":"noun","meta":{"gender":"f","number":"sg"}},{"token_index":7,"lemma":"plaza","pos":"noun","meta":{"gender":"f","number":"sg"}}]},"it":{"text":"Il negozio è accanto alla piazza.","tokens":["Il","negozio","è","accanto","alla","piazza."],"targets":[{"token_index":1,"lemma":"negozio","pos":"noun","meta":{"gender":"m","number":"sg"}},{"token_index":5,"lemma":"piazza","pos":"noun","meta":{"gender":"f","number":"sg"}}]}}},{"id":"c0032","cefr":"A2","theme":["cotidiano"],"cognacy":"high","false_friend":false,"false_friend_note":null,"sentences":{"pt":{"text":"Eles chegaram tarde em casa.","tokens":["Eles","chegaram","tarde","em","casa."],"targets":[{"token_index":1,"lemma":"chegar","pos":"verb","meta":{"tense":"past","person":"3pl"}}]},"en":{"text":"They arrived home late.","tokens":["They","arrived","home","late."],"targets":[{"token_index":1,"lemma":"arrive","pos":"verb","meta":{"tense":"past","person":"3pl"}}]},"es":{"text":"Han llegado tarde a casa.","tokens":["Han","llegado","tarde","a","casa."],"targets":[{"token_index":1,"lemma":"llegar","pos":"verb","meta":{"tense":"past","person":"3pl"}}]},"it":{"text":"Sono arrivati tardi a casa.","tokens":["Sono","arrivati","tardi","a","casa."],"targets":[{"token_index":1,"lemma":"arrivare","pos":"verb","meta":{"tense":"past","person":"3pl"}}]}}},{"id":"c0033","cefr":"A2","theme":["trabalho"],"cognacy":"medium","false_friend":true,"false_friend_note":"Em inglês, \u0027salary\u0027 é comum e não causa confusão, mas cuidado: em PT \u0027salário\u0027 é mensal e não se confunde com \u0027ordenado\u0027 do ES.","sentences":{"pt":{"text":"O salário dela é bom.","tokens":["O","salário","dela","é","bom."],"targets":[{"token_index":1,"lemma":"salário","pos":"noun","meta":{"gender":"m","number":"sg"}},{"token_index":4,"lemma":"bom","pos":"adj","meta":{"gender":"m","number":"sg"}}]},"en":{"text":"Her salary is good.","tokens":["Her","salary","is","good."],"targets":[{"token_index":1,"lemma":"salary","pos":"noun","meta":{}},{"token_index":3,"lemma":"good","pos":"adj","meta":{}}]},"es":{"text":"Su sueldo es bueno.","tokens":["Su","sueldo","es","bueno."],"targets":[{"token_index":1,"lemma":"sueldo","pos":"noun","meta":{"gender":"m","number":"sg"}},{"token_index":3,"lemma":"bueno","pos":"adj","meta":{"gender":"m","number":"sg"}}]},"it":{"text":"Il suo stipendio è buono.","tokens":["Il","suo","stipendio","è","buono."],"targets":[{"token_index":2,"lemma":"stipendio","pos":"noun","meta":{"gender":"m","number":"sg"}},{"token_index":4,"lemma":"buono","pos":"adj","meta":{"gender":"m","number":"sg"}}]}}},{"id":"c0034","cefr":"A2","theme":["saúde"],"cognacy":"high","false_friend":false,"false_friend_note":null,"sentences":{"pt":{"text":"Eu preciso dormir oito horas.","tokens":["Eu","preciso","dormir","oito","horas."],"targets":[{"token_index":1,"lemma":"precisar","pos":"verb","meta":{"tense":"present","person":"1sg"}},{"token_index":2,"lemma":"dormir","pos":"verb","meta":{"tense":"present","person":"1sg"}}]},"en":{"text":"I need to sleep eight hours.","tokens":["I","need","to","sleep","eight","hours."],"targets":[{"token_index":1,"lemma":"need","pos":"verb","meta":{"tense":"present","person":"1sg"}},{"token_index":3,"lemma":"sleep","pos":"verb","meta":{"tense":"present","person":"1sg"}}]},"es":{"text":"Necesito dormir ocho horas.","tokens":["Necesito","dormir","ocho","horas."],"targets":[{"token_index":0,"lemma":"necesitar","pos":"verb","meta":{"tense":"present","person":"1sg"}},{"token_index":1,"lemma":"dormir","pos":"verb","meta":{"tense":"present","person":"1sg"}}]},"it":{"text":"Ho bisogno di dormire otto ore.","tokens":["Ho","bisogno","di","dormire","otto","ore."],"targets":[{"token_index":0,"lemma":"avere","pos":"verb","meta":{"tense":"present","person":"1sg"}},{"token_index":3,"lemma":"dormire","pos":"verb","meta":{"tense":"present","person":"1sg"}}]}}},{"id":"c0035","cefr":"A2","theme":["tempo livre"],"cognacy":"medium","false_friend":false,"false_friend_note":null,"sentences":{"pt":{"text":"Vamos viajar para a praia.","tokens":["Vamos","viajar","para","a","praia."],"targets":[{"token_index":1,"lemma":"viajar","pos":"verb","meta":{"tense":"future","person":"1pl"}},{"token_index":4,"lemma":"praia","pos":"noun","meta":{"gender":"f","number":"sg"}}]},"en":{"text":"We are going to travel to the beach.","tokens":["We","are","going","to","travel","to","the","beach."],"targets":[{"token_index":4,"lemma":"travel","pos":"verb","meta":{"tense":"future","person":"1pl"}},{"token_index":7,"lemma":"beach","pos":"noun","meta":{}}]},"es":{"text":"Vamos a viajar a la playa.","tokens":["Vamos","a","viajar","a","la","playa."],"targets":[{"token_index":2,"lemma":"viajar","pos":"verb","meta":{"tense":"future","person":"1pl"}},{"token_index":5,"lemma":"playa","pos":"noun","meta":{"gender":"f","number":"sg"}}]},"it":{"text":"Andremo al mare in viaggio.","tokens":["Andremo","al","mare","in","viaggio."],"targets":[{"token_index":0,"lemma":"andare","pos":"verb","meta":{"tense":"future","person":"1pl"}},{"token_index":2,"lemma":"mare","pos":"noun","meta":{"gender":"m","number":"sg"}}]}}},{"id":"c0036","cefr":"A2","theme":["cotidiano"],"cognacy":"low","false_friend":false,"false_friend_note":null,"sentences":{"pt":{"text":"Esqueci as chaves no trabalho.","tokens":["Esqueci","as","chaves","no","trabalho."],"targets":[{"token_index":0,"lemma":"esquecer","pos":"verb","meta":{"tense":"past","person":"1sg"}},{"token_index":2,"lemma":"chave","pos":"noun","meta":{"gender":"f","number":"pl"}}]},"en":{"text":"I forgot the keys at work.","tokens":["I","forgot","the","keys","at","work."],"targets":[{"token_index":1,"lemma":"forget","pos":"verb","meta":{"tense":"past","person":"1sg"}},{"token_index":3,"lemma":"key","pos":"noun","meta":{}}]},"es":{"text":"He olvidado las llaves en el trabajo.","tokens":["He","olvidado","las","llaves","en","el","trabajo."],"targets":[{"token_index":1,"lemma":"olvidar","pos":"verb","meta":{"tense":"past","person":"1sg"}},{"token_index":3,"lemma":"llave","pos":"noun","meta":{"gender":"f","number":"pl"}}]},"it":{"text":"Ho dimenticato le chiavi al lavoro.","tokens":["Ho","dimenticato","le","chiavi","al","lavoro."],"targets":[{"token_index":1,"lemma":"dimenticare","pos":"verb","meta":{"tense":"past","person":"1sg"}},{"token_index":3,"lemma":"chiave","pos":"noun","meta":{"gender":"f","number":"pl"}}]}}},{"id":"c0037","cefr":"A2","theme":["trabalho"],"cognacy":"high","false_friend":false,"false_friend_note":null,"sentences":{"pt":{"text":"A reunião começa em dez minutos.","tokens":["A","reunião","começa","em","dez","minutos."],"targets":[{"token_index":1,"lemma":"reunião","pos":"noun","meta":{"gender":"f","number":"sg"}},{"token_index":2,"lemma":"começar","pos":"verb","meta":{"tense":"present","person":"3sg"}}]},"en":{"text":"The meeting starts in ten minutes.","tokens":["The","meeting","starts","in","ten","minutes."],"targets":[{"token_index":1,"lemma":"meeting","pos":"noun","meta":{}},{"token_index":2,"lemma":"start","pos":"verb","meta":{"tense":"present","person":"3sg"}}]},"es":{"text":"La reunión empieza en diez minutos.","tokens":["La","reunión","empieza","en","diez","minutos."],"targets":[{"token_index":1,"lemma":"reunión","pos":"noun","meta":{"gender":"f","number":"sg"}},{"token_index":2,"lemma":"empezar","pos":"verb","meta":{"tense":"present","person":"3sg"}}]},"it":{"text":"La riunione inizia tra dieci minuti.","tokens":["La","riunione","inizia","tra","dieci","minuti."],"targets":[{"token_index":1,"lemma":"riunione","pos":"noun","meta":{"gender":"f","number":"sg"}},{"token_index":2,"lemma":"iniziare","pos":"verb","meta":{"tense":"present","person":"3sg"}}]}}},{"id":"c0038","cefr":"A2","theme":["saúde"],"cognacy":"low","false_friend":true,"false_friend_note":"Em espanhol, \u0027constipado\u0027 significa resfriado; em PT \u0027constipado\u0027 também é resfriado (em PT-PT) mas em PT-BR significa com prisão de ventre. Contexto regional importa.","sentences":{"pt":{"text":"Estou resfriado desde segunda.","tokens":["Estou","resfriado","desde","segunda."],"targets":[{"token_index":1,"lemma":"resfriado","pos":"adj","meta":{"gender":"m","number":"sg"}}]},"en":{"text":"I have had a cold since Monday.","tokens":["I","have","had","a","cold","since","Monday."],"targets":[{"token_index":4,"lemma":"cold","pos":"noun","meta":{}}]},"es":{"text":"Estoy constipado desde el lunes.","tokens":["Estoy","constipado","desde","el","lunes."],"targets":[{"token_index":1,"lemma":"constipado","pos":"adj","meta":{"gender":"m","number":"sg"}}]},"it":{"text":"Sono raffreddato da lunedì.","tokens":["Sono","raffreddato","da","lunedì."],"targets":[{"token_index":1,"lemma":"raffreddato","pos":"adj","meta":{"gender":"m","number":"sg"}}]}}},{"id":"c0039","cefr":"A2","theme":["tempo livre"],"cognacy":"medium","false_friend":false,"false_friend_note":null,"sentences":{"pt":{"text":"Vou ler um livro interessante.","tokens":["Vou","ler","um","livro","interessante."],"targets":[{"token_index":1,"lemma":"ler","pos":"verb","meta":{"tense":"future","person":"1sg"}},{"token_index":4,"lemma":"interessante","pos":"adj","meta":{"gender":"m","number":"sg"}}]},"en":{"text":"I am going to read an interesting book.","tokens":["I","am","going","to","read","an","interesting","book."],"targets":[{"token_index":4,"lemma":"read","pos":"verb","meta":{"tense":"future","person":"1sg"}},{"token_index":6,"lemma":"interesting","pos":"adj","meta":{}}]},"es":{"text":"Voy a leer un libro interesante.","tokens":["Voy","a","leer","un","libro","interesante."],"targets":[{"token_index":2,"lemma":"leer","pos":"verb","meta":{"tense":"future","person":"1sg"}},{"token_index":5,"lemma":"interesante","pos":"adj","meta":{"gender":"m","number":"sg"}}]},"it":{"text":"Leggerò un libro interessante.","tokens":["Leggerò","un","libro","interessante."],"targets":[{"token_index":0,"lemma":"leggere","pos":"verb","meta":{"tense":"future","person":"1sg"}},{"token_index":3,"lemma":"interessante","pos":"adj","meta":{"gender":"m","number":"sg"}}]}}},{"id":"c0040","cefr":"A2","theme":["cidade","cotidiano"],"cognacy":"medium","false_friend":false,"false_friend_note":null,"sentences":{"pt":{"text":"O ônibus passa a cada hora.","tokens":["O","ônibus","passa","a","cada","hora."],"targets":[{"token_index":1,"lemma":"ônibus","pos":"noun","meta":{"gender":"m","number":"sg"}},{"token_index":5,"lemma":"hora","pos":"noun","meta":{"gender":"f","number":"sg"}}]},"en":{"text":"The bus comes every hour.","tokens":["The","bus","comes","every","hour."],"targets":[{"token_index":1,"lemma":"bus","pos":"noun","meta":{}},{"token_index":4,"lemma":"hour","pos":"noun","meta":{}}]},"es":{"text":"El autobús pasa cada hora.","tokens":["El","autobús","pasa","cada","hora."],"targets":[{"token_index":1,"lemma":"autobús","pos":"noun","meta":{"gender":"m","number":"sg"}},{"token_index":4,"lemma":"hora","pos":"noun","meta":{"gender":"f","number":"sg"}}]},"it":{"text":"L\u0027autobus passa ogni ora.","tokens":["L\u0027autobus","passa","ogni","ora."],"targets":[{"token_index":0,"lemma":"autobus","pos":"noun","meta":{"gender":"m","number":"sg"}},{"token_index":3,"lemma":"ora","pos":"noun","meta":{"gender":"f","number":"sg"}}]}}},{"id":"c0041","cefr":"B1","theme":["saúde","família"],"cognacy":"low","false_friend":true,"false_friend_note":"Em espanhol, \u0027embarazada\u0027 significa grávida, não embaraçada/constrangida.","sentences":{"pt":{"text":"Minha irmã está grávida de três meses.","tokens":["Minha","irmã","está","grávida","de","três","meses."],"targets":[{"token_index":3,"lemma":"grávida","pos":"adj","meta":{"gender":"f","number":"sg"}}]},"en":{"text":"My sister is three months pregnant.","tokens":["My","sister","is","three","months","pregnant."],"targets":[{"token_index":5,"lemma":"pregnant","pos":"adj","meta":{}}]},"es":{"text":"Mi hermana está embarazada de tres meses.","tokens":["Mi","hermana","está","embarazada","de","tres","meses."],"targets":[{"token_index":3,"lemma":"embarazada","pos":"adj","meta":{"gender":"f","number":"sg"}}]},"it":{"text":"Mia sorella è incinta di tre mesi.","tokens":["Mia","sorella","è","incinta","di","tre","mesi."],"targets":[{"token_index":3,"lemma":"incinto","pos":"adj","meta":{"gender":"f","number":"sg"}}]}}},{"id":"c0042","cefr":"B1","theme":["comida","cotidiano"],"cognacy":"low","false_friend":true,"false_friend_note":"Em italiano, \u0027burro\u0027 significa manteiga, não burro (animal ou pessoa pouco inteligente) como em português.","sentences":{"pt":{"text":"Eu comprei manteiga no mercado.","tokens":["Eu","comprei","manteiga","no","mercado."],"targets":[{"token_index":1,"lemma":"comprar","pos":"verb","meta":{"tense":"past","person":"1sg"}},{"token_index":2,"lemma":"manteiga","pos":"noun","meta":{"gender":"f","number":"sg"}}]},"en":{"text":"I bought butter at the market.","tokens":["I","bought","butter","at","the","market."],"targets":[{"token_index":1,"lemma":"buy","pos":"verb","meta":{"tense":"past","person":"1sg"}},{"token_index":2,"lemma":"butter","pos":"noun","meta":{}}]},"es":{"text":"He comprado mantequilla en el mercado.","tokens":["He","comprado","mantequilla","en","el","mercado."],"targets":[{"token_index":1,"lemma":"comprar","pos":"verb","meta":{"tense":"past","person":"1sg"}},{"token_index":2,"lemma":"mantequilla","pos":"noun","meta":{"gender":"f","number":"sg"}}]},"it":{"text":"Ho comprato il burro al mercato.","tokens":["Ho","comprato","il","burro","al","mercato."],"targets":[{"token_index":1,"lemma":"comprare","pos":"verb","meta":{"tense":"past","person":"1sg"}},{"token_index":3,"lemma":"burro","pos":"noun","meta":{"gender":"m","number":"sg"}}]}}},{"id":"c0043","cefr":"B1","theme":["cotidiano","opiniões"],"cognacy":"low","false_friend":true,"false_friend_note":"Em espanhol, \u0027largo\u0027 significa longo/comprido, não largo (wide) como em português. Em PT, \u0027largo\u0027 é o oposto de estreito.","sentences":{"pt":{"text":"O rio é muito comprido aqui.","tokens":["O","rio","é","muito","comprido","aqui."],"targets":[{"token_index":1,"lemma":"rio","pos":"noun","meta":{"gender":"m","number":"sg"}},{"token_index":4,"lemma":"comprido","pos":"adj","meta":{"gender":"m","number":"sg"}}]},"en":{"text":"The river is very long here.","tokens":["The","river","is","very","long","here."],"targets":[{"token_index":1,"lemma":"river","pos":"noun","meta":{}},{"token_index":4,"lemma":"long","pos":"adj","meta":{}}]},"es":{"text":"El río es muy largo aquí.","tokens":["El","río","es","muy","largo","aquí."],"targets":[{"token_index":1,"lemma":"río","pos":"noun","meta":{"gender":"m","number":"sg"}},{"token_index":4,"lemma":"largo","pos":"adj","meta":{"gender":"m","number":"sg"}}]},"it":{"text":"Il fiume è molto lungo qui.","tokens":["Il","fiume","è","molto","lungo","qui."],"targets":[{"token_index":1,"lemma":"fiume","pos":"noun","meta":{"gender":"m","number":"sg"}},{"token_index":4,"lemma":"lungo","pos":"adj","meta":{"gender":"m","number":"sg"}}]}}},{"id":"c0044","cefr":"B1","theme":["cotidiano","emoções"],"cognacy":"low","false_friend":true,"false_friend_note":"Em italiano, \u0027caldo\u0027 significa quente, não caldo (sopa/líquido) como em português.","sentences":{"pt":{"text":"O chá ainda está quente demais.","tokens":["O","chá","ainda","está","quente","demais."],"targets":[{"token_index":1,"lemma":"chá","pos":"noun","meta":{"gender":"m","number":"sg"}},{"token_index":4,"lemma":"quente","pos":"adj","meta":{"gender":"m","number":"sg"}}]},"en":{"text":"The tea is still too hot.","tokens":["The","tea","is","still","too","hot."],"targets":[{"token_index":1,"lemma":"tea","pos":"noun","meta":{}},{"token_index":5,"lemma":"hot","pos":"adj","meta":{}}]},"es":{"text":"El té todavía está demasiado caliente.","tokens":["El","té","todavía","está","demasiado","caliente."],"targets":[{"token_index":1,"lemma":"té","pos":"noun","meta":{"gender":"m","number":"sg"}},{"token_index":5,"lemma":"caliente","pos":"adj","meta":{"gender":"m","number":"sg"}}]},"it":{"text":"Il tè è ancora troppo caldo.","tokens":["Il","tè","è","ancora","troppo","caldo."],"targets":[{"token_index":1,"lemma":"tè","pos":"noun","meta":{"gender":"m","number":"sg"}},{"token_index":5,"lemma":"caldo","pos":"adj","meta":{"gender":"m","number":"sg"}}]}}},{"id":"c0045","cefr":"B1","theme":["comida","opiniões"],"cognacy":"low","false_friend":true,"false_friend_note":"Em espanhol, \u0027exquisito\u0027 significa requintado/delicioso; em PT \u0027esquisito\u0027 significa estranho/bizarro.","sentences":{"pt":{"text":"O jantar estava absolutamente delicioso.","tokens":["O","jantar","estava","absolutamente","delicioso."],"targets":[{"token_index":1,"lemma":"jantar","pos":"noun","meta":{"gender":"m","number":"sg"}},{"token_index":4,"lemma":"delicioso","pos":"adj","meta":{"gender":"m","number":"sg"}}]},"en":{"text":"The dinner was absolutely delicious.","tokens":["The","dinner","was","absolutely","delicious."],"targets":[{"token_index":1,"lemma":"dinner","pos":"noun","meta":{}},{"token_index":4,"lemma":"delicious","pos":"adj","meta":{}}]},"es":{"text":"La cena estuvo absolutamente exquisita.","tokens":["La","cena","estuvo","absolutamente","exquisita."],"targets":[{"token_index":1,"lemma":"cena","pos":"noun","meta":{"gender":"f","number":"sg"}},{"token_index":4,"lemma":"exquisito","pos":"adj","meta":{"gender":"f","number":"sg"}}]},"it":{"text":"La cena era assolutamente squisita.","tokens":["La","cena","era","assolutamente","squisita."],"targets":[{"token_index":1,"lemma":"cena","pos":"noun","meta":{"gender":"f","number":"sg"}},{"token_index":4,"lemma":"squisito","pos":"adj","meta":{"gender":"f","number":"sg"}}]}}},{"id":"c0046","cefr":"B1","theme":["emoções"],"cognacy":"medium","false_friend":false,"false_friend_note":null,"sentences":{"pt":{"text":"Eu fiquei triste com a notícia.","tokens":["Eu","fiquei","triste","com","a","notícia."],"targets":[{"token_index":1,"lemma":"ficar","pos":"verb","meta":{"tense":"past","person":"1sg"}},{"token_index":2,"lemma":"triste","pos":"adj","meta":{"gender":"m","number":"sg"}}]},"en":{"text":"I became sad with the news.","tokens":["I","became","sad","with","the","news."],"targets":[{"token_index":1,"lemma":"become","pos":"verb","meta":{"tense":"past","person":"1sg"}},{"token_index":2,"lemma":"sad","pos":"adj","meta":{}}]},"es":{"text":"Me puse triste con la noticia.","tokens":["Me","puse","triste","con","la","noticia."],"targets":[{"token_index":1,"lemma":"poner","pos":"verb","meta":{"tense":"past","person":"1sg"}},{"token_index":2,"lemma":"triste","pos":"adj","meta":{"gender":"m","number":"sg"}}]},"it":{"text":"Sono diventato triste con la notizia.","tokens":["Sono","diventato","triste","con","la","notizia."],"targets":[{"token_index":1,"lemma":"diventare","pos":"verb","meta":{"tense":"past","person":"1sg"}},{"token_index":2,"lemma":"triste","pos":"adj","meta":{"gender":"m","number":"sg"}}]}}},{"id":"c0047","cefr":"B1","theme":["opiniões"],"cognacy":"high","false_friend":false,"false_friend_note":null,"sentences":{"pt":{"text":"Eu acho que ele tem razão.","tokens":["Eu","acho","que","ele","tem","razão."],"targets":[{"token_index":1,"lemma":"achar","pos":"verb","meta":{"tense":"present","person":"1sg"}},{"token_index":5,"lemma":"razão","pos":"noun","meta":{"gender":"f","number":"sg"}}]},"en":{"text":"I think he is right.","tokens":["I","think","he","is","right."],"targets":[{"token_index":1,"lemma":"think","pos":"verb","meta":{"tense":"present","person":"1sg"}},{"token_index":4,"lemma":"right","pos":"noun","meta":{}}]},"es":{"text":"Creo que él tiene razón.","tokens":["Creo","que","él","tiene","razón."],"targets":[{"token_index":0,"lemma":"creer","pos":"verb","meta":{"tense":"present","person":"1sg"}},{"token_index":4,"lemma":"razón","pos":"noun","meta":{"gender":"f","number":"sg"}}]},"it":{"text":"Penso che lui abbia ragione.","tokens":["Penso","che","lui","abbia","ragione."],"targets":[{"token_index":0,"lemma":"pensare","pos":"verb","meta":{"tense":"present","person":"1sg"}},{"token_index":4,"lemma":"ragione","pos":"noun","meta":{"gender":"f","number":"sg"}}]}}},{"id":"c0048","cefr":"B1","theme":["cotidiano","emoções"],"cognacy":"medium","false_friend":false,"false_friend_note":null,"sentences":{"pt":{"text":"Vou tentar explicar a situação.","tokens":["Vou","tentar","explicar","a","situação."],"targets":[{"token_index":1,"lemma":"tentar","pos":"verb","meta":{"tense":"future","person":"1sg"}},{"token_index":2,"lemma":"explicar","pos":"verb","meta":{"tense":"future","person":"1sg"}},{"token_index":4,"lemma":"situação","pos":"noun","meta":{"gender":"f","number":"sg"}}]},"en":{"text":"I am going to try to explain the situation.","tokens":["I","am","going","to","try","to","explain","the","situation."],"targets":[{"token_index":4,"lemma":"try","pos":"verb","meta":{"tense":"future","person":"1sg"}},{"token_index":6,"lemma":"explain","pos":"verb","meta":{"tense":"future","person":"1sg"}},{"token_index":8,"lemma":"situation","pos":"noun","meta":{}}]},"es":{"text":"Voy a intentar explicar la situación.","tokens":["Voy","a","intentar","explicar","la","situación."],"targets":[{"token_index":2,"lemma":"intentar","pos":"verb","meta":{"tense":"future","person":"1sg"}},{"token_index":3,"lemma":"explicar","pos":"verb","meta":{"tense":"future","person":"1sg"}},{"token_index":5,"lemma":"situación","pos":"noun","meta":{"gender":"f","number":"sg"}}]},"it":{"text":"Proverò a spiegare la situazione.","tokens":["Proverò","a","spiegare","la","situazione."],"targets":[{"token_index":0,"lemma":"provare","pos":"verb","meta":{"tense":"future","person":"1sg"}},{"token_index":2,"lemma":"spiegare","pos":"verb","meta":{"tense":"future","person":"1sg"}},{"token_index":4,"lemma":"situazione","pos":"noun","meta":{"gender":"f","number":"sg"}}]}}},{"id":"c0049","cefr":"B1","theme":["emoções","opiniões"],"cognacy":"medium","false_friend":false,"false_friend_note":null,"sentences":{"pt":{"text":"Ela tem medo de falar em público.","tokens":["Ela","tem","medo","de","falar","em","público."],"targets":[{"token_index":2,"lemma":"medo","pos":"noun","meta":{"gender":"m","number":"sg"}},{"token_index":4,"lemma":"falar","pos":"verb","meta":{"tense":"present","person":"3sg"}}]},"en":{"text":"She is afraid of speaking in public.","tokens":["She","is","afraid","of","speaking","in","public."],"targets":[{"token_index":2,"lemma":"afraid","pos":"noun","meta":{}},{"token_index":4,"lemma":"speak","pos":"verb","meta":{"tense":"present","person":"3sg"}}]},"es":{"text":"Ella tiene miedo de hablar en público.","tokens":["Ella","tiene","miedo","de","hablar","en","público."],"targets":[{"token_index":2,"lemma":"miedo","pos":"noun","meta":{"gender":"m","number":"sg"}},{"token_index":4,"lemma":"hablar","pos":"verb","meta":{"tense":"present","person":"3sg"}}]},"it":{"text":"Lei ha paura di parlare in pubblico.","tokens":["Lei","ha","paura","di","parlare","in","pubblico."],"targets":[{"token_index":2,"lemma":"paura","pos":"noun","meta":{"gender":"f","number":"sg"}},{"token_index":4,"lemma":"parlare","pos":"verb","meta":{"tense":"present","person":"3sg"}}]}}},{"id":"c0050","cefr":"B1","theme":["cotidiano","opiniões"],"cognacy":"medium","false_friend":false,"false_friend_note":null,"sentences":{"pt":{"text":"Nós já decidimos mudar de casa.","tokens":["Nós","já","decidimos","mudar","de","casa."],"targets":[{"token_index":2,"lemma":"decidir","pos":"verb","meta":{"tense":"past","person":"1pl"}},{"token_index":3,"lemma":"mudar","pos":"verb","meta":{"tense":"present","person":"1pl"}}]},"en":{"text":"We have already decided to move house.","tokens":["We","have","already","decided","to","move","house."],"targets":[{"token_index":3,"lemma":"decide","pos":"verb","meta":{"tense":"past","person":"1pl"}},{"token_index":5,"lemma":"move","pos":"verb","meta":{"tense":"present","person":"1pl"}}]},"es":{"text":"Ya hemos decidido mudarnos de casa.","tokens":["Ya","hemos","decidido","mudarnos","de","casa."],"targets":[{"token_index":2,"lemma":"decidir","pos":"verb","meta":{"tense":"past","person":"1pl"}},{"token_index":3,"lemma":"mudarse","pos":"verb","meta":{"tense":"present","person":"1pl"}}]},"it":{"text":"Abbiamo già deciso di cambiare casa.","tokens":["Abbiamo","già","deciso","di","cambiare","casa."],"targets":[{"token_index":2,"lemma":"decidere","pos":"verb","meta":{"tense":"past","person":"1pl"}},{"token_index":4,"lemma":"cambiare","pos":"verb","meta":{"tense":"present","person":"1pl"}}]}}}]};
+
+// ── SETTINGS DEFAULTS ──────────────────────────────────────────────────────
+const SETTINGS_DEFAULTS = {
+  'corpus_url': './corpus/corpus.json',
+  'active_languages': ['en','es','it'],
+  'desired_retention.en': 0.85,
+  'desired_retention.es': 0.90,
+  'desired_retention.it': 0.90,
+  'daily_new.en': 5,
+  'daily_new.es': 10,
+  'daily_new.it': 10,
+  'daily_review_cap': 100,
+  'learning_steps': [],
+  'min_interval_hours': 24,
+  'mature_threshold_days': 21,
+  'anti_interference_gap': 10,
+  'highlight_color.en': '#3b82f6',
+  'highlight_color.es': '#eab308',
+  'highlight_color.it': '#22c55e',
+  'backup_reminder_days': 7,
+};
+// ── INFRA: IndexedDB ──────────────────────────────────────────────────────
+let _db = null;
+function openDB() {
+  if (_db) return Promise.resolve(_db);
+  return new Promise((res, rej) => {
+    const req = indexedDB.open('linguas_v1', 1);
+    req.onupgradeneeded = e => {
+      const db = e.target.result;
+      if (!db.objectStoreNames.contains('cards')) {
+        const cs = db.createObjectStore('cards', { keyPath: 'item_id' });
+        cs.createIndex('by_due', 'due');
+        cs.createIndex('by_lang_due', ['lang','due']);
+      }
+      if (!db.objectStoreNames.contains('reviews')) {
+        const rs = db.createObjectStore('reviews', { autoIncrement: true, keyPath: 'id' });
+        rs.createIndex('by_timestamp', 'timestamp');
+        rs.createIndex('by_item_id', 'item_id');
+      }
+      if (!db.objectStoreNames.contains('settings')) {
+        db.createObjectStore('settings', { keyPath: 'key' });
+      }
+    };
+    req.onsuccess = e => { _db = e.target.result; res(_db); };
+    req.onerror = () => rej(req.error);
+  });
+}
+
+const idbReq = r => new Promise((res, rej) => { r.onsuccess = () => res(r.result); r.onerror = () => rej(r.error); });
+
+function makeCardRepo(db) {
+  const S = 'cards';
+  const s = (m='readonly') => db.transaction(S,m).objectStore(S);
+  return {
+    get: id => idbReq(s().get(id)),
+    put: c => idbReq(s('readwrite').put(c)),
+    putMany: cards => new Promise((res, rej) => {
+      if (!cards.length) { res(); return; }
+      const tx = db.transaction(S, 'readwrite');
+      for (const c of cards) tx.objectStore(S).put(c);
+      tx.oncomplete = () => res();
+      tx.onerror = () => rej(tx.error);
+    }),
+    getAll: () => idbReq(s().getAll()),
+    getDue: async (lang, nowMs) => {
+      const all = await idbReq(s().index('by_lang_due').getAll(IDBKeyRange.bound([lang,0],[lang,nowMs])));
+      return all.filter(c => c.state !== 0);
+    },
+    getNew: async lang => {
+      const all = await idbReq(s().index('by_lang_due').getAll(IDBKeyRange.bound([lang,0],[lang,Infinity])));
+      return all.filter(c => c.state === 0);
+    },
+    getAllByLang: lang => idbReq(s().index('by_lang_due').getAll(IDBKeyRange.bound([lang,0],[lang,Infinity]))),
+    clear: () => idbReq(s('readwrite').clear()),
+  };
+}
+
+function makeReviewRepo(db) {
+  const S = 'reviews';
+  const s = (m='readonly') => db.transaction(S,m).objectStore(S);
+  return {
+    add: r => idbReq(s('readwrite').add(r)),
+    delete: id => idbReq(s('readwrite').delete(id)),
+    getAll: () => idbReq(s().getAll()),
+    getByTimestampRange: (from, to) => idbReq(s().index('by_timestamp').getAll(IDBKeyRange.bound(from,to))),
+    clear: () => idbReq(s('readwrite').clear()),
+  };
+}
+
+function makeSettingsRepo(db) {
+  const S = 'settings';
+  const s = (m='readonly') => db.transaction(S,m).objectStore(S);
+  const cache = {};
+  return {
+    async load() {
+      const all = await idbReq(s().getAll());
+      for (const {key,value} of all) cache[key] = value;
+    },
+    get(key) { return key in cache ? cache[key] : SETTINGS_DEFAULTS[key]; },
+    async set(key, value) { cache[key] = value; return idbReq(s('readwrite').put({key,value})); },
+    getAll: () => idbReq(s().getAll()),
+    clear: () => idbReq(s('readwrite').clear()),
+  };
+}
+
+// ── INFRA: Corpus Loader ──────────────────────────────────────────────────
+async function loadCorpus(url) {
+  try {
+    const r = await fetch(url);
+    if (!r.ok) throw new Error('HTTP '+r.status);
+    const d = await r.json();
+    if (!d.concepts) throw new Error('bad schema');
+    return d;
+  } catch(e) {
+    if (FEATURES.DEBUG_LOG) console.warn('Corpus fetch failed, using inline:', e.message);
+    return CORPUS_INLINE;
+  }
+}
+
+// ── INFRA: Export / Import ────────────────────────────────────────────────
+async function exportState(repos) {
+  const data = {
+    version:'1.0', exported_at: new Date().toISOString(),
+    settings: await repos.settings.getAll(),
+    cards: await repos.cards.getAll(),
+    reviews: await repos.reviews.getAll(),
+  };
+  const blob = new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `state_${new Date().toISOString().slice(0,10)}.json`;
+  a.click();
+  await repos.settings.set('last_export_at', Date.now());
+  showToast('✅ Estado exportado.', 'success');
+}
+
+async function importState(file, repos, onDone) {
+  let data;
+  try { data = JSON.parse(await file.text()); } catch { showToast('❌ JSON inválido.','error'); return; }
+  if (!data.cards || !Array.isArray(data.cards)) { showToast('❌ Schema inválido.','error'); return; }
+  if (!confirm('Isso substituirá TODOS os dados atuais. Continuar?')) return;
+  try {
+    await repos.cards.clear(); await repos.reviews.clear(); await repos.settings.clear();
+    for (const c of data.cards) await repos.cards.put(c);
+    for (const rv of data.reviews) { const {id:_,...r2} = rv; await repos.reviews.add(r2); }
+    if (data.settings) for (const s of data.settings) await repos.settings.set(s.key, s.value);
+    await repos.settings.load();
+    showToast('✅ Importado. Recarregue para aplicar.','success',true);
+    if (onDone) onDone();
+  } catch(e) { showToast('❌ Erro: '+e.message,'error'); }
+}
+
+// ── DOMAIN: cardFactory ───────────────────────────────────────────────────
+function cardFactory(conceptId, lang, targetIndex, now) {
+  return {
+    item_id: `${conceptId}_${lang}_${targetIndex}`,
+    concept_id: conceptId, lang, target_index: targetIndex,
+    due: now.getTime(), stability:0, difficulty:0, elapsed_days:0,
+    scheduled_days:0, reps:0, lapses:0, state:0, last_review:null,
+    created_at: now.getTime(), updated_at: now.getTime(),
+  };
+}
+
+// ── DOMAIN: srsEngine (Strategy) ─────────────────────────────────────────
+function makeSrsEngine(settings) {
+  const _ec = {};
+  function _eng(lang) {
+    const ret = settings.get(`desired_retention.${lang}`);
+    const k = `${lang}:${ret}`;
+    if (!_ec[k]) _ec[k] = fsrs(generatorParameters({
+      request_retention: ret, maximum_interval: 36500,
+      enable_fuzz: true, enable_short_term: false,
+    }));
+    return _ec[k];
+  }
+  function _ts(c) {
+    return {
+      due: new Date(c.due), stability: c.stability, difficulty: c.difficulty,
+      elapsed_days: c.elapsed_days, scheduled_days: c.scheduled_days,
+      reps: c.reps, lapses: c.lapses, state: c.state,
+      last_review: c.last_review ? new Date(c.last_review) : undefined,
+    };
+  }
+  return {
+    schedule(card, now, rating) {
+      const minH = settings.get('min_interval_hours');
+      const res = _eng(card.lang).next(_ts(card), now, rating);
+      const u = {
+        ...card,
+        due: res.card.due.getTime(), stability: res.card.stability,
+        difficulty: res.card.difficulty, elapsed_days: res.card.elapsed_days,
+        scheduled_days: res.card.scheduled_days, reps: res.card.reps,
+        lapses: res.card.lapses, state: res.card.state,
+        last_review: now.getTime(), updated_at: Date.now(),
+      };
+      // CLAMP: min 24h
+      if (u.scheduled_days < 1) { u.scheduled_days = 1; u.due = now.getTime() + minH*3600000; }
+      return u;
+    },
+    previewIntervals(card, now) {
+      const o = {};
+      for (const r of [1,2,3,4]) {
+        try { o[r] = Math.max(1, _eng(card.lang).next(_ts(card), now, r).card.scheduled_days); }
+        catch { o[r] = 1; }
+      }
+      return o;
+    }
+  };
+}
+
+// ── DOMAIN: sessionBuilder (Builder) ─────────────────────────────────────
+function groupByConceptLang(cards) {
+  const m = new Map();
+  for (const c of cards) {
+    const k = `${c.concept_id}::${c.lang}`;
+    if (!m.has(k)) m.set(k, {concept_id:c.concept_id, lang:c.lang, cards:[], minDue:c.due});
+    const e = m.get(k); e.cards.push(c);
+    if (c.due < e.minDue) e.minDue = c.due;
+  }
+  return [...m.values()];
+}
+
+function applyAntiInterference(queue, gap) {
+  if (!gap || FEATURES.DISABLE_ANTI_INTERFERENCE) return queue;
+  let g = gap;
+  while (g > 0) {
+    const result = [], deferred = [];
+    for (const item of queue) {
+      const conflict = result.slice(-g).some(x => x.concept_id===item.concept_id && x.lang!==item.lang);
+      if (conflict) deferred.push(item); else result.push(item);
+    }
+    if (!deferred.length) return result;
+    for (const d of deferred) {
+      let placed = false;
+      for (let i = g; i <= result.length; i++) {
+        if (!result.slice(Math.max(0,i-g),i).some(x=>x.concept_id===d.concept_id&&x.lang!==d.lang)) {
+          result.splice(i,0,d); placed=true; break;
+        }
+      }
+      if (!placed) result.push(d);
+    }
+    const ok = !result.some((item,idx) =>
+      result.slice(Math.max(0,idx-g),idx).some(x=>x.concept_id===item.concept_id&&x.lang!==item.lang)
+    );
+    if (ok) return result;
+    g--;
+    if (g > 0) console.warn(`anti_interference gap relaxado para ${g}`);
+  }
+  console.warn('anti_interference: gap=0, sem reordenamento');
+  return queue;
+}
+
+async function buildSession(repos, settings, now) {
+  const activeLangs = settings.get('active_languages');
+  const cap = settings.get('daily_review_cap');
+  const gap = settings.get('anti_interference_gap');
+  let items = [];
+  for (const lang of activeLangs) {
+    const due = await repos.cards.getDue(lang, now.getTime());
+    items.push(...groupByConceptLang(due));
+  }
+  items.sort((a,b) => a.minDue - b.minDue);
+  if (items.length > cap) items = items.slice(0, cap);
+  for (const lang of activeLangs) {
+    const dailyNew = settings.get(`daily_new.${lang}`);
+    const newGroups = groupByConceptLang(await repos.cards.getNew(lang)).slice(0, dailyNew);
+    items.push(...newGroups);
+  }
+  return applyAntiInterference(items, gap);
+}
+
+// ── DOMAIN: statsAggregator ───────────────────────────────────────────────
+async function calcStats(repos, settings, now) {
+  const activeLangs = settings.get('active_languages');
+  const mt = settings.get('mature_threshold_days');
+  const stats = {};
+  const since30 = now.getTime() - 30*86400000;
+  const allReviews = await repos.reviews.getByTimestampRange(since30, now.getTime());
+  for (const lang of activeLangs) {
+    const cards = await repos.cards.getAllByLang(lang);
+    const due = cards.filter(c => c.state!==0 && c.due<=now.getTime()).length;
+    const mature = cards.filter(c => c.scheduled_days > mt).length;
+    const lr = allReviews.filter(r => r.item_id.split('_')[1]===lang);
+    const lr7 = lr.filter(r => r.timestamp >= now.getTime()-7*86400000);
+    const ret = arr => arr.length ? arr.filter(r=>r.rating>=3).length/arr.length : null;
+    const avgT = arr => arr.length ? arr.reduce((s,r)=>s+r.duration_ms,0)/arr.length/1000 : null;
+    const bins = Array(20).fill(0);
+    for (const c of cards) if (c.state>0) bins[Math.min(19,Math.floor(c.difficulty/0.5))]++;
+    stats[lang] = {due, mature, total:cards.length, ret7:ret(lr7), ret30:ret(lr), avgT7:avgT(lr7), bins};
+  }
+  return stats;
+}
+
+// ── DOMAIN: bootstrap (idempotent) ───────────────────────────────────────
+async function bootstrap(corpus, repos, settings, onProgress) {
+  const langs = settings.get('active_languages');
+  const now = new Date();
+  // One bulk read — check what already exists
+  const existing = new Set((await repos.cards.getAll()).map(c => c.item_id));
+  const toCreate = [];
+  for (const concept of corpus.concepts) {
+    for (const lang of langs) {
+      const sent = concept.sentences[lang];
+      if (!sent) continue;
+      for (let ti = 0; ti < sent.targets.length; ti++) {
+        const id = `${concept.id}_${lang}_${ti}`;
+        if (!existing.has(id)) toCreate.push(cardFactory(concept.id, lang, ti, now));
+      }
+    }
+  }
+  // One bulk write — all cards in a single IDB transaction
+  if (toCreate.length) await repos.cards.putMany(toCreate);
+  if (onProgress) onProgress(toCreate.length);
+  if (FEATURES.DEBUG_LOG) console.log(`Bootstrap: ${toCreate.length} novos cards`);
+}
+
+// ── UI: Toast ─────────────────────────────────────────────────────────────
+function showToast(msg, type='', persistent=false) {
+  const c = document.getElementById('toast-container');
+  const t = document.createElement('div');
+  t.className = `toast ${type}`;
+  const close = document.createElement('span');
+  close.style.cssText = 'float:right;cursor:pointer;margin-left:8px;opacity:.6';
+  close.textContent = '✕';
+  close.onclick = () => t.remove();
+  t.textContent = msg;
+  t.appendChild(close);
+  c.appendChild(t);
+  if (!persistent) setTimeout(() => t.remove(), 4500);
+}
+
+// ── UI: Tooltip ───────────────────────────────────────────────────────────
+const _tt = document.getElementById('tooltip');
+function showTooltip(span, concept, lang, tokIdx, isMature) {
+  const sent = concept.sentences[lang];
+  const tgt = sent.targets.find(t=>t.token_index===tokIdx);
+  if (!tgt) return;
+  const tPos = sent.targets.indexOf(tgt);
+  const ptTgt = concept.sentences.pt.targets[tPos];
+  const ptWord = ptTgt ? concept.sentences.pt.tokens[ptTgt.token_index].replace(/[.,!?:;]+$/,'') : '';
+  const m = tgt.meta||{};
+  const metaParts = [
+    m.gender&&(m.gender==='f'?'fem.':'masc.'),
+    m.number&&(m.number==='pl'?'pl.':'sg.'),
+    m.tense, m.person,
+  ].filter(Boolean);
+  let html = `<div class="tt-lemma">${tgt.lemma}</div>`;
+  if (ptWord) html += `<div class="tt-translation">🇧🇷 ${ptWord}</div>`;
+  if (metaParts.length) html += `<div class="tt-meta">${metaParts.join(' · ')}</div>`;
+  if (concept.false_friend && concept.false_friend_note)
+    html += `<div class="tt-ff">⚠ ${concept.false_friend_note}</div>`;
+  if (isMature) html = `<div class="tt-mature">🔒 Card maduro (forçado)</div>` + html;
+  _tt.innerHTML = html;
+  _tt.hidden = false;
+  const r = span.getBoundingClientRect();
+  const tw = _tt.offsetWidth||260, th = _tt.offsetHeight||100;
+  let left = r.left+window.scrollX, top = r.bottom+window.scrollY+8;
+  if (left+tw > window.innerWidth-12) left = window.innerWidth-tw-12;
+  if (top+th > window.innerHeight+window.scrollY-12) top = r.top+window.scrollY-th-8;
+  _tt.style.left = left+'px'; _tt.style.top = top+'px';
+}
+function hideTooltip() { _tt.hidden=true; _tt.innerHTML=''; }
+
+// ── UI: renderSentence ────────────────────────────────────────────────────
+function renderSentence(concept, lang, settings, repCard, matureThreshold) {
+  const sent = concept.sentences[lang];
+  const isPt = lang==='pt';
+  const color = isPt ? null : settings.get(`highlight_color.${lang}`);
+  const targetSet = new Set(sent.targets.map(t=>t.token_index));
+  const isMature = !isPt && repCard && repCard.scheduled_days > matureThreshold;
+  const p = document.createElement('p');
+  p.className = 'sentence-text' + (isPt ? ' pt-anchor' : '');
+  sent.tokens.forEach((tok, idx) => {
+    const isLast = idx === sent.tokens.length-1;
+    if (!targetSet.has(idx)) {
+      p.appendChild(document.createTextNode(tok+(isLast?'':' ')));
+      return;
+    }
+    const span = document.createElement('span');
+    span.className = 'target-word';
+    span.textContent = tok;
+    if (!isPt) {
+      span.style.textDecoration = 'underline';
+      span.style.textDecorationColor = color;
+      span.style.textDecorationThickness = '2px';
+      span.tabIndex = 0;
+      span.addEventListener('mouseenter', e => { if (!isMature||e.shiftKey) showTooltip(span,concept,lang,idx,isMature); });
+      span.addEventListener('mouseleave', hideTooltip);
+      span.addEventListener('click', () => { if (isMature) showTooltip(span,concept,lang,idx,isMature); });
+      span.addEventListener('keydown', e => {
+        if (e.key==='Enter'||e.key===' ') { e.preventDefault(); showTooltip(span,concept,lang,idx,isMature); }
+        if (e.key==='Escape') hideTooltip();
+      });
+      if (concept.false_friend) {
+        const ff = document.createElement('span');
+        ff.className='ff-marker'; ff.textContent='⚠'; ff.title='Falso amigo';
+        span.appendChild(ff);
+      }
+    }
+    p.appendChild(span);
+    if (!isLast) p.appendChild(document.createTextNode(' '));
+  });
+  return p;
+}
+
+// ── UI: Navigation ────────────────────────────────────────────────────────
+function showView(name) {
+  ['dashboard','session','settings'].forEach(v => {
+    document.getElementById(`view-${v}`).hidden = v!==name;
+    document.querySelector(`[data-view="${v}"]`)?.classList.toggle('active', v===name);
+  });
+}
+
+// ── UI: Dashboard ─────────────────────────────────────────────────────────
+async function renderDashboard(repos, corpus, settings, srsEngine) {
+  const now = FEATURES.MOCK_TODAY ? new Date(FEATURES.MOCK_TODAY) : new Date();
+  const view = document.getElementById('view-dashboard');
+  const langs = settings.get('active_languages');
+  view.innerHTML = '<div class="loading">Calculando…</div>';
+  let stats;
+  try { stats = await calcStats(repos, settings, now); }
+  catch(e) { view.innerHTML=`<div class="card"><p style="color:var(--danger)">Erro: ${e.message}</p></div>`; return; }
+  const totalDue = langs.reduce((s,l)=>s+(stats[l]?.due||0),0);
+  let html = `<div class="dashboard-start">
+    <button class="btn btn-primary" id="btn-start">▶ Iniciar Sessão</button>
+    <span class="total-due">${totalDue} card${totalDue!==1?'s':''} devidos hoje</span>
+  </div><div class="stat-grid">`;
+  for (const lang of langs) {
+    const s=stats[lang]||{};
+    html+=`<div class="stat-card lang-${lang}">
+      <div class="stat-label">${lang.toUpperCase()} devidos</div>
+      <div class="stat-value">${s.due||0}</div>
+      <div style="font-size:11px;color:var(--text-dim);margin-top:4px">${s.total||0} total · ${s.mature||0} maduros</div>
+    </div>`;
+  }
+  html+=`</div><div class="card"><div class="card-title">Retenção</div>
+    <table class="retention-table"><thead><tr><th>Idioma</th><th>7 dias</th><th>30 dias</th><th>Tempo médio</th></tr></thead><tbody>`;
+  for (const lang of langs) {
+    const s=stats[lang]||{};
+    const r7=s.ret7!=null?(s.ret7*100).toFixed(1)+'%':'—';
+    const r30=s.ret30!=null?(s.ret30*100).toFixed(1)+'%':'—';
+    const at=s.avgT7!=null?s.avgT7.toFixed(1)+'s':'—';
+    html+=`<tr><td><strong style="color:var(--${lang})">${lang.toUpperCase()}</strong></td><td>${r7}</td><td>${r30}</td><td>${at}</td></tr>`;
+  }
+  html+=`</tbody></table></div><div class="card"><div class="card-title">Dificuldade FSRS</div>`;
+  for (const lang of langs) {
+    const s=stats[lang]||{}; const bins=s.bins||Array(20).fill(0);
+    const maxB=Math.max(...bins,1);
+    const W=380,H=70,pad=2,bw=(W-pad)/bins.length-1;
+    const colorMap={'en':'#3b82f6','es':'#eab308','it':'#22c55e'};
+    const col=colorMap[lang]||'#888';
+    const bars=bins.map((v,i)=>{const h=Math.round((v/maxB)*H);const x=pad+i*(bw+1);return `<rect x="${x}" y="${H-h}" width="${bw}" height="${h}" fill="${col}" opacity=".8" rx="1"/>`;}).join('');
+    html+=`<div style="margin-bottom:12px"><div style="font-size:12px;color:var(--text-muted);margin-bottom:4px">${lang.toUpperCase()}</div>
+      <svg width="${W}" height="${H+16}" overflow="visible">${bars}
+        <text x="0" y="${H+14}" font-size="10" fill="var(--text-dim)">0</text>
+        <text x="${W/2}" y="${H+14}" font-size="10" fill="var(--text-dim)" text-anchor="middle">5</text>
+        <text x="${W}" y="${H+14}" font-size="10" fill="var(--text-dim)" text-anchor="end">10</text>
+      </svg></div>`;
+  }
+  html+=`</div><div class="card"><div class="card-title">Backup</div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <button class="btn btn-secondary" id="btn-export">⬇ Exportar Estado</button>
+      <label class="btn btn-secondary" style="cursor:pointer">⬆ Importar Estado<input type="file" id="inp-import" accept=".json" style="display:none"></label>
+    </div></div>`;
+  view.innerHTML = html;
+  document.getElementById('btn-start')?.addEventListener('click', ()=>startSession(repos,corpus,settings,srsEngine));
+  document.getElementById('btn-export')?.addEventListener('click', ()=>exportState(repos));
+  document.getElementById('inp-import')?.addEventListener('change', e=>{
+    const f=e.target.files[0];
+    if (f) importState(f,repos,()=>renderDashboard(repos,corpus,settings,srsEngine));
+  });
+}
+
+// ── UI: Session ───────────────────────────────────────────────────────────
+let _snap = null;
+async function startSession(repos, corpus, settings, srsEngine) {
+  showView('session');
+  const view = document.getElementById('view-session');
+  view.innerHTML='<div class="loading">Preparando…</div>';
+  const now = FEATURES.MOCK_TODAY ? new Date(FEATURES.MOCK_TODAY) : new Date();
+  const queue = await buildSession(repos, settings, now);
+  if (!queue.length) {
+    view.innerHTML=`<div class="session-end"><h2>🎉 Tudo em dia!</h2><p>Nenhum card devido.</p><button class="btn btn-primary" id="bbd">← Dashboard</button></div>`;
+    document.getElementById('bbd')?.addEventListener('click',()=>{showView('dashboard');renderDashboard(repos,corpus,settings,srsEngine);});
+    return;
+  }
+  const cMap = new Map(corpus.concepts.map(c=>[c.id,c]));
+  const mt = settings.get('mature_threshold_days');
+  const t0 = Date.now();
+  let cardT = Date.now();
+  let _kh = null;
+
+  async function showCard(idx) {
+    if (_kh) { document.removeEventListener('keydown',_kh); _kh=null; }
+    if (idx >= queue.length) {
+      const el=Math.round((Date.now()-t0)/1000);
+      view.innerHTML=`<div class="session-end"><h2>✅ Sessão concluída!</h2><p>${queue.length} cards em ${Math.floor(el/60)}m ${el%60}s</p><button class="btn btn-primary" id="bbd2">← Dashboard</button></div>`;
+      document.getElementById('bbd2')?.addEventListener('click',()=>{showView('dashboard');renderDashboard(repos,corpus,settings,srsEngine);});
+      return;
+    }
+    cardT = Date.now(); _snap = null;
+    const item = queue[idx];
+    const concept = cMap.get(item.concept_id);
+    if (!concept) { showCard(idx+1); return; }
+    const lang = item.lang;
+    const repCard = item.cards[0];
+    const ivals = repCard ? srsEngine.previewIntervals(repCard, now) : {1:1,2:1,3:1,4:1};
+    const pct = Math.round(idx/queue.length*100);
+    const wrap = document.createElement('div');
+    const prog = document.createElement('div');
+    prog.className='session-progress';
+    prog.innerHTML=`<span>${idx+1}/${queue.length}</span><div class="progress-bar-wrap"><div class="progress-bar" style="width:${pct}%"></div></div><span>${pct}%</span>`;
+    wrap.appendChild(prog);
+    const card = document.createElement('div');
+    card.className='card';
+    // PT anchor
+    const ptRow=document.createElement('div'); ptRow.className='lang-row';
+    const ptH=document.createElement('div'); ptH.className='lang-header';
+    ptH.innerHTML='<span class="lang-tag lang-pt">PT</span>';
+    ptRow.appendChild(ptH);
+    ptRow.appendChild(renderSentence(concept,'pt',settings,null,mt));
+    card.appendChild(ptRow);
+    // Lang row
+    const lRow=document.createElement('div'); lRow.className='lang-row';
+    const lH=document.createElement('div'); lH.className='lang-header';
+    lH.innerHTML=`<span class="lang-tag lang-${lang}">${lang.toUpperCase()}</span>`;
+    lRow.appendChild(lH);
+    lRow.appendChild(renderSentence(concept,lang,settings,repCard,mt));
+    // Rating buttons
+    const rRow=document.createElement('div'); rRow.className='rating-row';
+    const rl=['Novamente','Difícil','Bom','Fácil'];
+    const rc=['r-again','r-hard','r-good','r-easy'];
+    for (let r=1;r<=4;r++) {
+      const b=document.createElement('button');
+      b.className=`rating-btn ${rc[r-1]}`;
+      b.innerHTML=`<span class="btn-label">${rl[r-1]}</span><span class="btn-interval">${ivals[r]}d</span>`;
+      b.addEventListener('click',()=>rateCard(r));
+      rRow.appendChild(b);
+    }
+    lRow.appendChild(rRow); card.appendChild(lRow);
+    // Undo row
+    const uRow=document.createElement('div'); uRow.className='undo-row'; uRow.hidden=true;
+    const uBtn=document.createElement('button'); uBtn.className='undo-btn'; uBtn.textContent='⟲ Desfazer';
+    uBtn.addEventListener('click', undoLast); uRow.appendChild(uBtn); card.appendChild(uRow);
+    // Meta
+    const meta=document.createElement('div'); meta.className='meta-badge';
+    meta.textContent=`${concept.cefr} · ${concept.theme.join(', ')}${concept.false_friend?' · ⚠ Falso amigo':''}`;
+    if (FEATURES.SHOW_INTERNAL_IDS) meta.textContent+=` · ${item.concept_id}`;
+    card.appendChild(meta);
+    wrap.appendChild(card);
+    view.innerHTML=''; view.appendChild(wrap);
+
+    let rated=false;
+    async function rateCard(rating) {
+      if (rated) return; rated=true;
+      const dur=Date.now()-cardT;
+      const rn = FEATURES.MOCK_TODAY ? new Date(FEATURES.MOCK_TODAY) : new Date();
+      _snap = {idx, cards: item.cards.map(c=>({...c})), reviewIds:[]};
+      for (const c of item.cards) {
+        const updated = srsEngine.schedule(c, rn, rating);
+        await repos.cards.put(updated);
+        const rid = await repos.reviews.add({item_id:c.item_id, rating, timestamp:rn.getTime(), duration_ms:dur, state_before:c.state, state_after:updated.state});
+        _snap.reviewIds.push(rid);
+        item.cards[item.cards.indexOf(c)] = updated;
+      }
+      uRow.hidden=false;
+      setTimeout(()=>{ _snap=null; uRow.hidden=true; showCard(idx+1); }, 1000);
+    }
+    async function undoLast() {
+      if (!_snap) return;
+      const s=_snap; _snap=null;
+      for (const c of s.cards) await repos.cards.put(c);
+      for (const id of s.reviewIds) await repos.reviews.delete(id);
+      showToast('↩ Desfeito.','');
+      showCard(s.idx);
+    }
+    _kh = e => {
+      if (rated) return;
+      const m={'1':1,'2':2,'3':3,'4':4,'Enter':3};
+      if (m[e.key]) { e.preventDefault(); rateCard(m[e.key]); }
+    };
+    document.addEventListener('keydown', _kh);
+  }
+  showCard(0);
+}
+
+// ── UI: Settings ──────────────────────────────────────────────────────────
+async function renderSettings(repos, corpus, settings, srsEngine) {
+  const view = document.getElementById('view-settings');
+  const langs = settings.get('active_languages');
+
+  function mkSection(title) {
+    const d=document.createElement('div'); d.className='settings-section';
+    d.innerHTML=`<h3>${title}</h3>`; return d;
+  }
+  function mkRow(lbl, desc, ctrl) {
+    const d=document.createElement('div'); d.className='setting-row';
+    d.innerHTML=`<div><div class="setting-label">${lbl}</div><div class="setting-desc">${desc}</div></div>`;
+    const cd=document.createElement('div'); cd.className='setting-control'; cd.appendChild(ctrl); d.appendChild(cd); return d;
+  }
+  function numInp(key, min, max, step=1) {
+    const i=document.createElement('input'); i.type='number'; i.min=min; i.max=max; i.step=step; i.value=settings.get(key);
+    i.addEventListener('change',()=>{ const v=step<1?parseFloat(i.value):parseInt(i.value); if (!isNaN(v)&&v>=min&&v<=max) settings.set(key,v); });
+    return i;
+  }
+  function colInp(key) {
+    const i=document.createElement('input'); i.type='color'; i.value=settings.get(key);
+    i.addEventListener('input',()=>settings.set(key,i.value)); return i;
+  }
+
+  const root=document.createElement('div');
+
+  // Idiomas
+  const sL=mkSection('Idiomas Ativos');
+  const tr=document.createElement('div'); tr.className='setting-row';
+  tr.innerHTML='<div><div class="setting-label">Idiomas ativos</div><div class="setting-desc">PT é sempre âncora</div></div>';
+  const trd=document.createElement('div'); trd.className='setting-control';
+  const lt=document.createElement('div'); lt.className='lang-toggle';
+  ['en','es','it'].forEach(l=>{
+    const b=document.createElement('button'); b.textContent=l.toUpperCase();
+    if (langs.includes(l)) b.className=`active ${l}`;
+    b.addEventListener('click', async ()=>{
+      let ls=settings.get('active_languages');
+      if (ls.includes(l)) { if(ls.length===1){showToast('Min 1 idioma','warn');return;} ls=ls.filter(x=>x!==l); }
+      else ls=[...ls,l].sort();
+      await settings.set('active_languages',ls);
+      renderSettings(repos,corpus,settings,srsEngine);
+    });
+    lt.appendChild(b);
+  });
+  trd.appendChild(lt); tr.appendChild(trd); sL.appendChild(tr); root.appendChild(sL);
+
+  const sR=mkSection('Retenção Desejada');
+  ['en','es','it'].forEach(l=>sR.appendChild(mkRow(l.toUpperCase(),'0.50–1.00',numInp(`desired_retention.${l}`,0.5,1.0,0.01))));
+  root.appendChild(sR);
+
+  const sN=mkSection('Carga Diária');
+  ['en','es','it'].forEach(l=>sN.appendChild(mkRow(`Novos/dia (${l.toUpperCase()})`,'0-50 por dia',numInp(`daily_new.${l}`,0,50))));
+  sN.appendChild(mkRow('Cap revisões/dia','Limite diário total',numInp('daily_review_cap',10,500)));
+  root.appendChild(sN);
+
+  const sT=mkSection('Thresholds');
+  sT.appendChild(mkRow('Maturidade (dias)','Tooltip bloqueado para cards acima deste intervalo',numInp('mature_threshold_days',0,365)));
+  sT.appendChild(mkRow('Gap anti-interferência','Posições entre ES/IT do mesmo conceito',numInp('anti_interference_gap',0,30)));
+  sT.appendChild(mkRow('Aviso backup (dias)','0 = desativado',numInp('backup_reminder_days',0,30)));
+  root.appendChild(sT);
+
+  const sC=mkSection('Cores de Realce');
+  ['en','es','it'].forEach(l=>sC.appendChild(mkRow(l.toUpperCase(),'Cor do sublinhado das palavras-alvo',colInp(`highlight_color.${l}`))));
+  root.appendChild(sC);
+
+  const sB=mkSection('Backup & Restore');
+  const bd=document.createElement('div'); bd.style.cssText='display:flex;gap:12px;flex-wrap:wrap;padding:8px 0';
+  const be=document.createElement('button'); be.className='btn btn-secondary'; be.textContent='⬇ Exportar'; be.onclick=()=>exportState(repos);
+  const bl=document.createElement('label'); bl.className='btn btn-secondary'; bl.style.cursor='pointer'; bl.textContent='⬆ Importar';
+  const bi=document.createElement('input'); bi.type='file'; bi.accept='.json'; bi.style.display='none';
+  bi.addEventListener('change',e=>{const f=e.target.files[0];if(f)importState(f,repos,()=>renderSettings(repos,corpus,settings,srsEngine));});
+  bl.appendChild(bi); bd.appendChild(be); bd.appendChild(bl); sB.appendChild(bd); root.appendChild(sB);
+
+  const info=document.createElement('p'); info.style.cssText='font-size:12px;color:var(--text-dim);padding:12px 0';
+  info.textContent='Nota: learning_steps=[] e min_interval_hours=24 são fixos em v1.';
+  root.appendChild(info);
+
+  view.innerHTML=''; view.appendChild(root);
+}
+
+// ── H1: Storage check ─────────────────────────────────────────────────────
+async function checkStorage() {
+  if (!navigator.storage) return;
+  try {
+    const est=await navigator.storage.estimate();
+    const p=await navigator.storage.persist();
+    if (!p||(est.quota&&est.quota<50*1024*1024)) {
+      const b=document.getElementById('private-banner');
+      b.className='warning-banner';
+      b.textContent='⚠ Armazenamento pode não persistir. Use modo normal ou faça backups frequentes.';
+    }
+  } catch {}
+}
+
+// ── H3: Backup reminder ───────────────────────────────────────────────────
+function checkBackupReminder(settings) {
+  const days=settings.get('backup_reminder_days');
+  if (!days) return;
+  const last=settings.get('last_export_at');
+  if (!last) return;
+  const elapsed=(Date.now()-last)/86400000;
+  if (elapsed>days) showToast(`⚠ Último backup há ${Math.floor(elapsed)} dias. Exporte!`,'warn',true);
+}
+
+// ── MAIN ──────────────────────────────────────────────────────────────────
+function setLoadingMsg(msg) {
+  const v = document.getElementById('view-dashboard');
+  v.innerHTML = `<div class="loading">${msg}</div>`;
+}
+
+async function main() {
+  try {
+    setLoadingMsg('Abrindo banco de dados…');
+    const db = await openDB();
+    const repos = { cards:makeCardRepo(db), reviews:makeReviewRepo(db), settings:makeSettingsRepo(db) };
+    await repos.settings.load();
+    await checkStorage();
+    setLoadingMsg('Carregando corpus…');
+    const corpus = await loadCorpus(repos.settings.get('corpus_url'));
+    setLoadingMsg('Inicializando cartões…');
+    await bootstrap(corpus, repos, repos.settings, n => {
+      if (n > 0) setLoadingMsg(`Criando ${n} cartões pela primeira vez…`);
+    });
+    const engine = makeSrsEngine(repos.settings);
+    document.querySelectorAll('.nav-btn').forEach(btn=>btn.addEventListener('click',()=>{
+      const v=btn.dataset.view; showView(v);
+      if (v==='dashboard') renderDashboard(repos,corpus,repos.settings,engine);
+      if (v==='settings') renderSettings(repos,corpus,repos.settings,engine);
+    }));
+    await renderDashboard(repos, corpus, repos.settings, engine);
+    checkBackupReminder(repos.settings);
+  } catch(e) {
+    console.error('Fatal:',e);
+    document.getElementById('view-dashboard').innerHTML=`<div class="card">
+      <div class="card-title" style="color:var(--danger)">Erro ao inicializar</div>
+      <p>${e.message}</p>
+      <p style="font-size:13px;color:var(--text-muted);margin-top:8px">Abra o console (F12) para detalhes.</p>
+    </div>`;
+  }
+}
+
+document.addEventListener('DOMContentLoaded', main);
+  </script>
+  <script>
+    // PWA: registra o service worker (precisa de http(s); em file:// é ignorado).
+    if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').catch(e => console.warn('[pwa] SW não registrado:', e));
+      });
+    }
+  </script>
+</body>
+</html>

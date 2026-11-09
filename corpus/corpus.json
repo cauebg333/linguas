@@ -1,0 +1,6303 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-04-20",
+  "concepts": [
+    {
+      "id": "c0001",
+      "cefr": "A1",
+      "theme": [
+        "família",
+        "cotidiano"
+      ],
+      "cognacy": "high",
+      "false_friend": false,
+      "false_friend_note": null,
+      "sentences": {
+        "pt": {
+          "text": "Minha mãe trabalha em casa.",
+          "tokens": [
+            "Minha",
+            "mãe",
+            "trabalha",
+            "em",
+            "casa."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "mãe",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 2,
+              "lemma": "trabalhar",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "3sg"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "My mother works from home.",
+          "tokens": [
+            "My",
+            "mother",
+            "works",
+            "from",
+            "home."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "mother",
+              "pos": "noun",
+              "meta": {}
+            },
+            {
+              "token_index": 2,
+              "lemma": "work",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "3sg"
+              }
+            }
+          ]
+        },
+        "es": {
+          "text": "Mi madre trabaja en casa.",
+          "tokens": [
+            "Mi",
+            "madre",
+            "trabaja",
+            "en",
+            "casa."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "madre",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 2,
+              "lemma": "trabajar",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "3sg"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "Mia madre lavora a casa.",
+          "tokens": [
+            "Mia",
+            "madre",
+            "lavora",
+            "a",
+            "casa."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "madre",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 2,
+              "lemma": "lavorare",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "3sg"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0002",
+      "cefr": "A1",
+      "theme": [
+        "corpo"
+      ],
+      "cognacy": "high",
+      "false_friend": false,
+      "false_friend_note": null,
+      "sentences": {
+        "pt": {
+          "text": "A mão direita está fria.",
+          "tokens": [
+            "A",
+            "mão",
+            "direita",
+            "está",
+            "fria."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "mão",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "The right hand is cold.",
+          "tokens": [
+            "The",
+            "right",
+            "hand",
+            "is",
+            "cold."
+          ],
+          "targets": [
+            {
+              "token_index": 2,
+              "lemma": "hand",
+              "pos": "noun",
+              "meta": {}
+            }
+          ]
+        },
+        "es": {
+          "text": "La mano derecha está fría.",
+          "tokens": [
+            "La",
+            "mano",
+            "derecha",
+            "está",
+            "fría."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "mano",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "La mano destra è fredda.",
+          "tokens": [
+            "La",
+            "mano",
+            "destra",
+            "è",
+            "fredda."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "mano",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0003",
+      "cefr": "A1",
+      "theme": [
+        "família"
+      ],
+      "cognacy": "high",
+      "false_friend": false,
+      "false_friend_note": null,
+      "sentences": {
+        "pt": {
+          "text": "Meu pai come uma maçã.",
+          "tokens": [
+            "Meu",
+            "pai",
+            "come",
+            "uma",
+            "maçã."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "pai",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 2,
+              "lemma": "comer",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "3sg"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "maçã",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "My father eats an apple.",
+          "tokens": [
+            "My",
+            "father",
+            "eats",
+            "an",
+            "apple."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "father",
+              "pos": "noun",
+              "meta": {}
+            },
+            {
+              "token_index": 2,
+              "lemma": "eat",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "3sg"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "apple",
+              "pos": "noun",
+              "meta": {}
+            }
+          ]
+        },
+        "es": {
+          "text": "Mi padre come una manzana.",
+          "tokens": [
+            "Mi",
+            "padre",
+            "come",
+            "una",
+            "manzana."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "padre",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 2,
+              "lemma": "comer",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "3sg"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "manzana",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "Mio padre mangia una mela.",
+          "tokens": [
+            "Mio",
+            "padre",
+            "mangia",
+            "una",
+            "mela."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "padre",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 2,
+              "lemma": "mangiare",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "3sg"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "mela",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0004",
+      "cefr": "A1",
+      "theme": [
+        "casa"
+      ],
+      "cognacy": "high",
+      "false_friend": false,
+      "false_friend_note": null,
+      "sentences": {
+        "pt": {
+          "text": "A porta da cozinha está aberta.",
+          "tokens": [
+            "A",
+            "porta",
+            "da",
+            "cozinha",
+            "está",
+            "aberta."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "porta",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 3,
+              "lemma": "cozinha",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "The kitchen door is open.",
+          "tokens": [
+            "The",
+            "kitchen",
+            "door",
+            "is",
+            "open."
+          ],
+          "targets": [
+            {
+              "token_index": 2,
+              "lemma": "door",
+              "pos": "noun",
+              "meta": {}
+            },
+            {
+              "token_index": 1,
+              "lemma": "kitchen",
+              "pos": "noun",
+              "meta": {}
+            }
+          ]
+        },
+        "es": {
+          "text": "La puerta de la cocina está abierta.",
+          "tokens": [
+            "La",
+            "puerta",
+            "de",
+            "la",
+            "cocina",
+            "está",
+            "abierta."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "puerta",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "cocina",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "La porta della cucina è aperta.",
+          "tokens": [
+            "La",
+            "porta",
+            "della",
+            "cucina",
+            "è",
+            "aperta."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "porta",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 3,
+              "lemma": "cucina",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0005",
+      "cefr": "A1",
+      "theme": [
+        "números",
+        "cores"
+      ],
+      "cognacy": "medium",
+      "false_friend": false,
+      "false_friend_note": null,
+      "sentences": {
+        "pt": {
+          "text": "Eu tenho dois gatos pretos.",
+          "tokens": [
+            "Eu",
+            "tenho",
+            "dois",
+            "gatos",
+            "pretos."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "ter",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 3,
+              "lemma": "gato",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "pl"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "preto",
+              "pos": "adj",
+              "meta": {
+                "gender": "m",
+                "number": "pl"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "I have two black cats.",
+          "tokens": [
+            "I",
+            "have",
+            "two",
+            "black",
+            "cats."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "have",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "cat",
+              "pos": "noun",
+              "meta": {}
+            },
+            {
+              "token_index": 3,
+              "lemma": "black",
+              "pos": "adj",
+              "meta": {}
+            }
+          ]
+        },
+        "es": {
+          "text": "Tengo dos gatos negros.",
+          "tokens": [
+            "Tengo",
+            "dos",
+            "gatos",
+            "negros."
+          ],
+          "targets": [
+            {
+              "token_index": 0,
+              "lemma": "tener",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 2,
+              "lemma": "gato",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "pl"
+              }
+            },
+            {
+              "token_index": 3,
+              "lemma": "negro",
+              "pos": "adj",
+              "meta": {
+                "gender": "m",
+                "number": "pl"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "Ho due gatti neri.",
+          "tokens": [
+            "Ho",
+            "due",
+            "gatti",
+            "neri."
+          ],
+          "targets": [
+            {
+              "token_index": 0,
+              "lemma": "avere",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 2,
+              "lemma": "gatto",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "pl"
+              }
+            },
+            {
+              "token_index": 3,
+              "lemma": "nero",
+              "pos": "adj",
+              "meta": {
+                "gender": "m",
+                "number": "pl"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0006",
+      "cefr": "A1",
+      "theme": [
+        "comida"
+      ],
+      "cognacy": "high",
+      "false_friend": false,
+      "false_friend_note": null,
+      "sentences": {
+        "pt": {
+          "text": "Eu bebo café pela manhã.",
+          "tokens": [
+            "Eu",
+            "bebo",
+            "café",
+            "pela",
+            "manhã."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "beber",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 2,
+              "lemma": "café",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "I drink coffee in the morning.",
+          "tokens": [
+            "I",
+            "drink",
+            "coffee",
+            "in",
+            "the",
+            "morning."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "drink",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 2,
+              "lemma": "coffee",
+              "pos": "noun",
+              "meta": {}
+            }
+          ]
+        },
+        "es": {
+          "text": "Bebo café por la mañana.",
+          "tokens": [
+            "Bebo",
+            "café",
+            "por",
+            "la",
+            "mañana."
+          ],
+          "targets": [
+            {
+              "token_index": 0,
+              "lemma": "beber",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 1,
+              "lemma": "café",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "Bevo caffè la mattina.",
+          "tokens": [
+            "Bevo",
+            "caffè",
+            "la",
+            "mattina."
+          ],
+          "targets": [
+            {
+              "token_index": 0,
+              "lemma": "bere",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 1,
+              "lemma": "caffè",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0007",
+      "cefr": "A1",
+      "theme": [
+        "corpo"
+      ],
+      "cognacy": "medium",
+      "false_friend": false,
+      "false_friend_note": null,
+      "sentences": {
+        "pt": {
+          "text": "Os olhos dela são azuis.",
+          "tokens": [
+            "Os",
+            "olhos",
+            "dela",
+            "são",
+            "azuis."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "olho",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "pl"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "azul",
+              "pos": "adj",
+              "meta": {
+                "gender": "m",
+                "number": "pl"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "Her eyes are blue.",
+          "tokens": [
+            "Her",
+            "eyes",
+            "are",
+            "blue."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "eye",
+              "pos": "noun",
+              "meta": {}
+            },
+            {
+              "token_index": 3,
+              "lemma": "blue",
+              "pos": "adj",
+              "meta": {}
+            }
+          ]
+        },
+        "es": {
+          "text": "Sus ojos son azules.",
+          "tokens": [
+            "Sus",
+            "ojos",
+            "son",
+            "azules."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "ojo",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "pl"
+              }
+            },
+            {
+              "token_index": 3,
+              "lemma": "azul",
+              "pos": "adj",
+              "meta": {
+                "gender": "m",
+                "number": "pl"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "I suoi occhi sono azzurri.",
+          "tokens": [
+            "I",
+            "suoi",
+            "occhi",
+            "sono",
+            "azzurri."
+          ],
+          "targets": [
+            {
+              "token_index": 2,
+              "lemma": "occhio",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "pl"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "azzurro",
+              "pos": "adj",
+              "meta": {
+                "gender": "m",
+                "number": "pl"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0008",
+      "cefr": "A1",
+      "theme": [
+        "casa"
+      ],
+      "cognacy": "high",
+      "false_friend": false,
+      "false_friend_note": null,
+      "sentences": {
+        "pt": {
+          "text": "A casa tem três quartos.",
+          "tokens": [
+            "A",
+            "casa",
+            "tem",
+            "três",
+            "quartos."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "casa",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 2,
+              "lemma": "ter",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "3sg"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "The house has three bedrooms.",
+          "tokens": [
+            "The",
+            "house",
+            "has",
+            "three",
+            "bedrooms."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "house",
+              "pos": "noun",
+              "meta": {}
+            },
+            {
+              "token_index": 2,
+              "lemma": "have",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "3sg"
+              }
+            }
+          ]
+        },
+        "es": {
+          "text": "La casa tiene tres habitaciones.",
+          "tokens": [
+            "La",
+            "casa",
+            "tiene",
+            "tres",
+            "habitaciones."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "casa",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 2,
+              "lemma": "tener",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "3sg"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "La casa ha tre camere.",
+          "tokens": [
+            "La",
+            "casa",
+            "ha",
+            "tre",
+            "camere."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "casa",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 2,
+              "lemma": "avere",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "3sg"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0009",
+      "cefr": "A1",
+      "theme": [
+        "comida"
+      ],
+      "cognacy": "high",
+      "false_friend": false,
+      "false_friend_note": null,
+      "sentences": {
+        "pt": {
+          "text": "O pão está na mesa.",
+          "tokens": [
+            "O",
+            "pão",
+            "está",
+            "na",
+            "mesa."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "pão",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "mesa",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "The bread is on the table.",
+          "tokens": [
+            "The",
+            "bread",
+            "is",
+            "on",
+            "the",
+            "table."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "bread",
+              "pos": "noun",
+              "meta": {}
+            },
+            {
+              "token_index": 5,
+              "lemma": "table",
+              "pos": "noun",
+              "meta": {}
+            }
+          ]
+        },
+        "es": {
+          "text": "El pan está en la mesa.",
+          "tokens": [
+            "El",
+            "pan",
+            "está",
+            "en",
+            "la",
+            "mesa."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "pan",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 5,
+              "lemma": "mesa",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "Il pane è sul tavolo.",
+          "tokens": [
+            "Il",
+            "pane",
+            "è",
+            "sul",
+            "tavolo."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "pane",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "tavolo",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0010",
+      "cefr": "A1",
+      "theme": [
+        "família"
+      ],
+      "cognacy": "high",
+      "false_friend": false,
+      "false_friend_note": null,
+      "sentences": {
+        "pt": {
+          "text": "Minha irmã estuda muito.",
+          "tokens": [
+            "Minha",
+            "irmã",
+            "estuda",
+            "muito."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "irmã",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 2,
+              "lemma": "estudar",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "3sg"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "My sister studies a lot.",
+          "tokens": [
+            "My",
+            "sister",
+            "studies",
+            "a",
+            "lot."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "sister",
+              "pos": "noun",
+              "meta": {}
+            },
+            {
+              "token_index": 2,
+              "lemma": "study",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "3sg"
+              }
+            }
+          ]
+        },
+        "es": {
+          "text": "Mi hermana estudia mucho.",
+          "tokens": [
+            "Mi",
+            "hermana",
+            "estudia",
+            "mucho."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "hermana",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 2,
+              "lemma": "estudiar",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "3sg"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "Mia sorella studia molto.",
+          "tokens": [
+            "Mia",
+            "sorella",
+            "studia",
+            "molto."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "sorella",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 2,
+              "lemma": "studiare",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "3sg"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0011",
+      "cefr": "A1",
+      "theme": [
+        "casa"
+      ],
+      "cognacy": "high",
+      "false_friend": false,
+      "false_friend_note": null,
+      "sentences": {
+        "pt": {
+          "text": "A janela do quarto é grande.",
+          "tokens": [
+            "A",
+            "janela",
+            "do",
+            "quarto",
+            "é",
+            "grande."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "janela",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 5,
+              "lemma": "grande",
+              "pos": "adj",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "The bedroom window is big.",
+          "tokens": [
+            "The",
+            "bedroom",
+            "window",
+            "is",
+            "big."
+          ],
+          "targets": [
+            {
+              "token_index": 2,
+              "lemma": "window",
+              "pos": "noun",
+              "meta": {}
+            },
+            {
+              "token_index": 4,
+              "lemma": "big",
+              "pos": "adj",
+              "meta": {}
+            }
+          ]
+        },
+        "es": {
+          "text": "La ventana del cuarto es grande.",
+          "tokens": [
+            "La",
+            "ventana",
+            "del",
+            "cuarto",
+            "es",
+            "grande."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "ventana",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 5,
+              "lemma": "grande",
+              "pos": "adj",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "La finestra della camera è grande.",
+          "tokens": [
+            "La",
+            "finestra",
+            "della",
+            "camera",
+            "è",
+            "grande."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "finestra",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 5,
+              "lemma": "grande",
+              "pos": "adj",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0012",
+      "cefr": "A1",
+      "theme": [
+        "comida"
+      ],
+      "cognacy": "high",
+      "false_friend": false,
+      "false_friend_note": null,
+      "sentences": {
+        "pt": {
+          "text": "A água está muito fria.",
+          "tokens": [
+            "A",
+            "água",
+            "está",
+            "muito",
+            "fria."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "água",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "The water is very cold.",
+          "tokens": [
+            "The",
+            "water",
+            "is",
+            "very",
+            "cold."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "water",
+              "pos": "noun",
+              "meta": {}
+            }
+          ]
+        },
+        "es": {
+          "text": "El agua está muy fría.",
+          "tokens": [
+            "El",
+            "agua",
+            "está",
+            "muy",
+            "fría."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "agua",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "L'acqua è molto fredda.",
+          "tokens": [
+            "L'acqua",
+            "è",
+            "molto",
+            "fredda."
+          ],
+          "targets": [
+            {
+              "token_index": 0,
+              "lemma": "acqua",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0013",
+      "cefr": "A1",
+      "theme": [
+        "corpo"
+      ],
+      "cognacy": "medium",
+      "false_friend": false,
+      "false_friend_note": null,
+      "sentences": {
+        "pt": {
+          "text": "O cabelo dele é curto.",
+          "tokens": [
+            "O",
+            "cabelo",
+            "dele",
+            "é",
+            "curto."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "cabelo",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "curto",
+              "pos": "adj",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "His hair is short.",
+          "tokens": [
+            "His",
+            "hair",
+            "is",
+            "short."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "hair",
+              "pos": "noun",
+              "meta": {}
+            },
+            {
+              "token_index": 3,
+              "lemma": "short",
+              "pos": "adj",
+              "meta": {}
+            }
+          ]
+        },
+        "es": {
+          "text": "Su pelo es corto.",
+          "tokens": [
+            "Su",
+            "pelo",
+            "es",
+            "corto."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "pelo",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 3,
+              "lemma": "corto",
+              "pos": "adj",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "I suoi capelli sono corti.",
+          "tokens": [
+            "I",
+            "suoi",
+            "capelli",
+            "sono",
+            "corti."
+          ],
+          "targets": [
+            {
+              "token_index": 2,
+              "lemma": "capello",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "pl"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "corto",
+              "pos": "adj",
+              "meta": {
+                "gender": "m",
+                "number": "pl"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0014",
+      "cefr": "A1",
+      "theme": [
+        "família"
+      ],
+      "cognacy": "low",
+      "false_friend": false,
+      "false_friend_note": null,
+      "sentences": {
+        "pt": {
+          "text": "Meu avô tem setenta anos.",
+          "tokens": [
+            "Meu",
+            "avô",
+            "tem",
+            "setenta",
+            "anos."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "avô",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "My grandfather is seventy years old.",
+          "tokens": [
+            "My",
+            "grandfather",
+            "is",
+            "seventy",
+            "years",
+            "old."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "grandfather",
+              "pos": "noun",
+              "meta": {}
+            }
+          ]
+        },
+        "es": {
+          "text": "Mi abuelo tiene setenta años.",
+          "tokens": [
+            "Mi",
+            "abuelo",
+            "tiene",
+            "setenta",
+            "años."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "abuelo",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "Mio nonno ha settanta anni.",
+          "tokens": [
+            "Mio",
+            "nonno",
+            "ha",
+            "settanta",
+            "anni."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "nonno",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0015",
+      "cefr": "A1",
+      "theme": [
+        "comida"
+      ],
+      "cognacy": "high",
+      "false_friend": false,
+      "false_friend_note": null,
+      "sentences": {
+        "pt": {
+          "text": "Eu gosto de leite quente.",
+          "tokens": [
+            "Eu",
+            "gosto",
+            "de",
+            "leite",
+            "quente."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "gostar",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 3,
+              "lemma": "leite",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "I like warm milk.",
+          "tokens": [
+            "I",
+            "like",
+            "warm",
+            "milk."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "like",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 3,
+              "lemma": "milk",
+              "pos": "noun",
+              "meta": {}
+            }
+          ]
+        },
+        "es": {
+          "text": "Me gusta la leche caliente.",
+          "tokens": [
+            "Me",
+            "gusta",
+            "la",
+            "leche",
+            "caliente."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "gustar",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "3sg"
+              }
+            },
+            {
+              "token_index": 3,
+              "lemma": "leche",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "Mi piace il latte caldo.",
+          "tokens": [
+            "Mi",
+            "piace",
+            "il",
+            "latte",
+            "caldo."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "piacere",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "3sg"
+              }
+            },
+            {
+              "token_index": 3,
+              "lemma": "latte",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0016",
+      "cefr": "A1",
+      "theme": [
+        "números"
+      ],
+      "cognacy": "high",
+      "false_friend": false,
+      "false_friend_note": null,
+      "sentences": {
+        "pt": {
+          "text": "Hoje é o primeiro dia.",
+          "tokens": [
+            "Hoje",
+            "é",
+            "o",
+            "primeiro",
+            "dia."
+          ],
+          "targets": [
+            {
+              "token_index": 3,
+              "lemma": "primeiro",
+              "pos": "adj",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "dia",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "Today is the first day.",
+          "tokens": [
+            "Today",
+            "is",
+            "the",
+            "first",
+            "day."
+          ],
+          "targets": [
+            {
+              "token_index": 3,
+              "lemma": "first",
+              "pos": "adj",
+              "meta": {}
+            },
+            {
+              "token_index": 4,
+              "lemma": "day",
+              "pos": "noun",
+              "meta": {}
+            }
+          ]
+        },
+        "es": {
+          "text": "Hoy es el primer día.",
+          "tokens": [
+            "Hoy",
+            "es",
+            "el",
+            "primer",
+            "día."
+          ],
+          "targets": [
+            {
+              "token_index": 3,
+              "lemma": "primero",
+              "pos": "adj",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "día",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "Oggi è il primo giorno.",
+          "tokens": [
+            "Oggi",
+            "è",
+            "il",
+            "primo",
+            "giorno."
+          ],
+          "targets": [
+            {
+              "token_index": 3,
+              "lemma": "primo",
+              "pos": "adj",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "giorno",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0017",
+      "cefr": "A1",
+      "theme": [
+        "cotidiano"
+      ],
+      "cognacy": "medium",
+      "false_friend": false,
+      "false_friend_note": null,
+      "sentences": {
+        "pt": {
+          "text": "Eu moro em uma cidade pequena.",
+          "tokens": [
+            "Eu",
+            "moro",
+            "em",
+            "uma",
+            "cidade",
+            "pequena."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "morar",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "cidade",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "I live in a small city.",
+          "tokens": [
+            "I",
+            "live",
+            "in",
+            "a",
+            "small",
+            "city."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "live",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 5,
+              "lemma": "city",
+              "pos": "noun",
+              "meta": {}
+            }
+          ]
+        },
+        "es": {
+          "text": "Vivo en una ciudad pequeña.",
+          "tokens": [
+            "Vivo",
+            "en",
+            "una",
+            "ciudad",
+            "pequeña."
+          ],
+          "targets": [
+            {
+              "token_index": 0,
+              "lemma": "vivir",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 3,
+              "lemma": "ciudad",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "Vivo in una città piccola.",
+          "tokens": [
+            "Vivo",
+            "in",
+            "una",
+            "città",
+            "piccola."
+          ],
+          "targets": [
+            {
+              "token_index": 0,
+              "lemma": "vivere",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 3,
+              "lemma": "città",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0018",
+      "cefr": "A1",
+      "theme": [
+        "cores"
+      ],
+      "cognacy": "low",
+      "false_friend": false,
+      "false_friend_note": null,
+      "sentences": {
+        "pt": {
+          "text": "O céu está amarelo agora.",
+          "tokens": [
+            "O",
+            "céu",
+            "está",
+            "amarelo",
+            "agora."
+          ],
+          "targets": [
+            {
+              "token_index": 3,
+              "lemma": "amarelo",
+              "pos": "adj",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "The sky is yellow now.",
+          "tokens": [
+            "The",
+            "sky",
+            "is",
+            "yellow",
+            "now."
+          ],
+          "targets": [
+            {
+              "token_index": 3,
+              "lemma": "yellow",
+              "pos": "adj",
+              "meta": {}
+            }
+          ]
+        },
+        "es": {
+          "text": "El cielo está amarillo ahora.",
+          "tokens": [
+            "El",
+            "cielo",
+            "está",
+            "amarillo",
+            "ahora."
+          ],
+          "targets": [
+            {
+              "token_index": 3,
+              "lemma": "amarillo",
+              "pos": "adj",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "Il cielo è giallo adesso.",
+          "tokens": [
+            "Il",
+            "cielo",
+            "è",
+            "giallo",
+            "adesso."
+          ],
+          "targets": [
+            {
+              "token_index": 3,
+              "lemma": "giallo",
+              "pos": "adj",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0019",
+      "cefr": "A1",
+      "theme": [
+        "cotidiano"
+      ],
+      "cognacy": "high",
+      "false_friend": false,
+      "false_friend_note": null,
+      "sentences": {
+        "pt": {
+          "text": "Eu falo português todos os dias.",
+          "tokens": [
+            "Eu",
+            "falo",
+            "português",
+            "todos",
+            "os",
+            "dias."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "falar",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "1sg"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "I speak Portuguese every day.",
+          "tokens": [
+            "I",
+            "speak",
+            "Portuguese",
+            "every",
+            "day."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "speak",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "1sg"
+              }
+            }
+          ]
+        },
+        "es": {
+          "text": "Hablo portugués todos los días.",
+          "tokens": [
+            "Hablo",
+            "portugués",
+            "todos",
+            "los",
+            "días."
+          ],
+          "targets": [
+            {
+              "token_index": 0,
+              "lemma": "hablar",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "1sg"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "Parlo portoghese tutti i giorni.",
+          "tokens": [
+            "Parlo",
+            "portoghese",
+            "tutti",
+            "i",
+            "giorni."
+          ],
+          "targets": [
+            {
+              "token_index": 0,
+              "lemma": "parlare",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "1sg"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0020",
+      "cefr": "A1",
+      "theme": [
+        "casa",
+        "cotidiano"
+      ],
+      "cognacy": "high",
+      "false_friend": false,
+      "false_friend_note": null,
+      "sentences": {
+        "pt": {
+          "text": "O livro está sobre a cama.",
+          "tokens": [
+            "O",
+            "livro",
+            "está",
+            "sobre",
+            "a",
+            "cama."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "livro",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 5,
+              "lemma": "cama",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "The book is on the bed.",
+          "tokens": [
+            "The",
+            "book",
+            "is",
+            "on",
+            "the",
+            "bed."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "book",
+              "pos": "noun",
+              "meta": {}
+            },
+            {
+              "token_index": 5,
+              "lemma": "bed",
+              "pos": "noun",
+              "meta": {}
+            }
+          ]
+        },
+        "es": {
+          "text": "El libro está sobre la cama.",
+          "tokens": [
+            "El",
+            "libro",
+            "está",
+            "sobre",
+            "la",
+            "cama."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "libro",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 5,
+              "lemma": "cama",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "Il libro è sul letto.",
+          "tokens": [
+            "Il",
+            "libro",
+            "è",
+            "sul",
+            "letto."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "libro",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "letto",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0021",
+      "cefr": "A2",
+      "theme": [
+        "trabalho"
+      ],
+      "cognacy": "high",
+      "false_friend": false,
+      "false_friend_note": null,
+      "sentences": {
+        "pt": {
+          "text": "Ontem eu trabalhei até tarde.",
+          "tokens": [
+            "Ontem",
+            "eu",
+            "trabalhei",
+            "até",
+            "tarde."
+          ],
+          "targets": [
+            {
+              "token_index": 2,
+              "lemma": "trabalhar",
+              "pos": "verb",
+              "meta": {
+                "tense": "past",
+                "person": "1sg"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "Yesterday I worked until late.",
+          "tokens": [
+            "Yesterday",
+            "I",
+            "worked",
+            "until",
+            "late."
+          ],
+          "targets": [
+            {
+              "token_index": 2,
+              "lemma": "work",
+              "pos": "verb",
+              "meta": {
+                "tense": "past",
+                "person": "1sg"
+              }
+            }
+          ]
+        },
+        "es": {
+          "text": "Ayer he trabajado hasta tarde.",
+          "tokens": [
+            "Ayer",
+            "he",
+            "trabajado",
+            "hasta",
+            "tarde."
+          ],
+          "targets": [
+            {
+              "token_index": 2,
+              "lemma": "trabajar",
+              "pos": "verb",
+              "meta": {
+                "tense": "past",
+                "person": "1sg"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "Ieri ho lavorato fino a tardi.",
+          "tokens": [
+            "Ieri",
+            "ho",
+            "lavorato",
+            "fino",
+            "a",
+            "tardi."
+          ],
+          "targets": [
+            {
+              "token_index": 2,
+              "lemma": "lavorare",
+              "pos": "verb",
+              "meta": {
+                "tense": "past",
+                "person": "1sg"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0022",
+      "cefr": "A2",
+      "theme": [
+        "cidade"
+      ],
+      "cognacy": "high",
+      "false_friend": false,
+      "false_friend_note": null,
+      "sentences": {
+        "pt": {
+          "text": "A estação de trem fica perto.",
+          "tokens": [
+            "A",
+            "estação",
+            "de",
+            "trem",
+            "fica",
+            "perto."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "estação",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 3,
+              "lemma": "trem",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "The train station is nearby.",
+          "tokens": [
+            "The",
+            "train",
+            "station",
+            "is",
+            "nearby."
+          ],
+          "targets": [
+            {
+              "token_index": 2,
+              "lemma": "station",
+              "pos": "noun",
+              "meta": {}
+            },
+            {
+              "token_index": 1,
+              "lemma": "train",
+              "pos": "noun",
+              "meta": {}
+            }
+          ]
+        },
+        "es": {
+          "text": "La estación de tren está cerca.",
+          "tokens": [
+            "La",
+            "estación",
+            "de",
+            "tren",
+            "está",
+            "cerca."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "estación",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 3,
+              "lemma": "tren",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "La stazione del treno è vicina.",
+          "tokens": [
+            "La",
+            "stazione",
+            "del",
+            "treno",
+            "è",
+            "vicina."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "stazione",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 3,
+              "lemma": "treno",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0023",
+      "cefr": "A2",
+      "theme": [
+        "saúde"
+      ],
+      "cognacy": "high",
+      "false_friend": false,
+      "false_friend_note": null,
+      "sentences": {
+        "pt": {
+          "text": "O médico vai chegar em breve.",
+          "tokens": [
+            "O",
+            "médico",
+            "vai",
+            "chegar",
+            "em",
+            "breve."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "médico",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 3,
+              "lemma": "chegar",
+              "pos": "verb",
+              "meta": {
+                "tense": "future",
+                "person": "3sg"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "The doctor is going to arrive soon.",
+          "tokens": [
+            "The",
+            "doctor",
+            "is",
+            "going",
+            "to",
+            "arrive",
+            "soon."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "doctor",
+              "pos": "noun",
+              "meta": {}
+            },
+            {
+              "token_index": 5,
+              "lemma": "arrive",
+              "pos": "verb",
+              "meta": {
+                "tense": "future",
+                "person": "3sg"
+              }
+            }
+          ]
+        },
+        "es": {
+          "text": "El médico va a llegar pronto.",
+          "tokens": [
+            "El",
+            "médico",
+            "va",
+            "a",
+            "llegar",
+            "pronto."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "médico",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "llegar",
+              "pos": "verb",
+              "meta": {
+                "tense": "future",
+                "person": "3sg"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "Il medico sta per arrivare.",
+          "tokens": [
+            "Il",
+            "medico",
+            "sta",
+            "per",
+            "arrivare."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "medico",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "arrivare",
+              "pos": "verb",
+              "meta": {
+                "tense": "future",
+                "person": "3sg"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0024",
+      "cefr": "A2",
+      "theme": [
+        "tempo livre"
+      ],
+      "cognacy": "medium",
+      "false_friend": false,
+      "false_friend_note": null,
+      "sentences": {
+        "pt": {
+          "text": "No domingo eu vou ao cinema.",
+          "tokens": [
+            "No",
+            "domingo",
+            "eu",
+            "vou",
+            "ao",
+            "cinema."
+          ],
+          "targets": [
+            {
+              "token_index": 3,
+              "lemma": "ir",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 5,
+              "lemma": "cinema",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "On Sunday I go to the movies.",
+          "tokens": [
+            "On",
+            "Sunday",
+            "I",
+            "go",
+            "to",
+            "the",
+            "movies."
+          ],
+          "targets": [
+            {
+              "token_index": 3,
+              "lemma": "go",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 6,
+              "lemma": "movies",
+              "pos": "noun",
+              "meta": {}
+            }
+          ]
+        },
+        "es": {
+          "text": "El domingo voy al cine.",
+          "tokens": [
+            "El",
+            "domingo",
+            "voy",
+            "al",
+            "cine."
+          ],
+          "targets": [
+            {
+              "token_index": 2,
+              "lemma": "ir",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "cine",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "La domenica vado al cinema.",
+          "tokens": [
+            "La",
+            "domenica",
+            "vado",
+            "al",
+            "cinema."
+          ],
+          "targets": [
+            {
+              "token_index": 2,
+              "lemma": "andare",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "cinema",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0025",
+      "cefr": "A2",
+      "theme": [
+        "cotidiano"
+      ],
+      "cognacy": "high",
+      "false_friend": false,
+      "false_friend_note": null,
+      "sentences": {
+        "pt": {
+          "text": "Amanhã vou comprar pão fresco.",
+          "tokens": [
+            "Amanhã",
+            "vou",
+            "comprar",
+            "pão",
+            "fresco."
+          ],
+          "targets": [
+            {
+              "token_index": 2,
+              "lemma": "comprar",
+              "pos": "verb",
+              "meta": {
+                "tense": "future",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "fresco",
+              "pos": "adj",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "Tomorrow I will buy fresh bread.",
+          "tokens": [
+            "Tomorrow",
+            "I",
+            "will",
+            "buy",
+            "fresh",
+            "bread."
+          ],
+          "targets": [
+            {
+              "token_index": 3,
+              "lemma": "buy",
+              "pos": "verb",
+              "meta": {
+                "tense": "future",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "fresh",
+              "pos": "adj",
+              "meta": {}
+            }
+          ]
+        },
+        "es": {
+          "text": "Mañana voy a comprar pan fresco.",
+          "tokens": [
+            "Mañana",
+            "voy",
+            "a",
+            "comprar",
+            "pan",
+            "fresco."
+          ],
+          "targets": [
+            {
+              "token_index": 3,
+              "lemma": "comprar",
+              "pos": "verb",
+              "meta": {
+                "tense": "future",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 5,
+              "lemma": "fresco",
+              "pos": "adj",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "Domani comprerò pane fresco.",
+          "tokens": [
+            "Domani",
+            "comprerò",
+            "pane",
+            "fresco."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "comprare",
+              "pos": "verb",
+              "meta": {
+                "tense": "future",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 3,
+              "lemma": "fresco",
+              "pos": "adj",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0026",
+      "cefr": "A2",
+      "theme": [
+        "trabalho"
+      ],
+      "cognacy": "medium",
+      "false_friend": false,
+      "false_friend_note": null,
+      "sentences": {
+        "pt": {
+          "text": "Meu chefe é muito simpático.",
+          "tokens": [
+            "Meu",
+            "chefe",
+            "é",
+            "muito",
+            "simpático."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "chefe",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "simpático",
+              "pos": "adj",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "My boss is very nice.",
+          "tokens": [
+            "My",
+            "boss",
+            "is",
+            "very",
+            "nice."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "boss",
+              "pos": "noun",
+              "meta": {}
+            },
+            {
+              "token_index": 4,
+              "lemma": "nice",
+              "pos": "adj",
+              "meta": {}
+            }
+          ]
+        },
+        "es": {
+          "text": "Mi jefe es muy simpático.",
+          "tokens": [
+            "Mi",
+            "jefe",
+            "es",
+            "muy",
+            "simpático."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "jefe",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "simpático",
+              "pos": "adj",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "Il mio capo è molto simpatico.",
+          "tokens": [
+            "Il",
+            "mio",
+            "capo",
+            "è",
+            "molto",
+            "simpatico."
+          ],
+          "targets": [
+            {
+              "token_index": 2,
+              "lemma": "capo",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 5,
+              "lemma": "simpatico",
+              "pos": "adj",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0027",
+      "cefr": "A2",
+      "theme": [
+        "cidade"
+      ],
+      "cognacy": "medium",
+      "false_friend": false,
+      "false_friend_note": null,
+      "sentences": {
+        "pt": {
+          "text": "A rua principal está cheia hoje.",
+          "tokens": [
+            "A",
+            "rua",
+            "principal",
+            "está",
+            "cheia",
+            "hoje."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "rua",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 2,
+              "lemma": "principal",
+              "pos": "adj",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "The main street is crowded today.",
+          "tokens": [
+            "The",
+            "main",
+            "street",
+            "is",
+            "crowded",
+            "today."
+          ],
+          "targets": [
+            {
+              "token_index": 2,
+              "lemma": "street",
+              "pos": "noun",
+              "meta": {}
+            },
+            {
+              "token_index": 1,
+              "lemma": "main",
+              "pos": "adj",
+              "meta": {}
+            }
+          ]
+        },
+        "es": {
+          "text": "La calle principal está llena hoy.",
+          "tokens": [
+            "La",
+            "calle",
+            "principal",
+            "está",
+            "llena",
+            "hoy."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "calle",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 2,
+              "lemma": "principal",
+              "pos": "adj",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "La strada principale è piena oggi.",
+          "tokens": [
+            "La",
+            "strada",
+            "principale",
+            "è",
+            "piena",
+            "oggi."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "strada",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 2,
+              "lemma": "principale",
+              "pos": "adj",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0028",
+      "cefr": "A2",
+      "theme": [
+        "saúde"
+      ],
+      "cognacy": "medium",
+      "false_friend": false,
+      "false_friend_note": null,
+      "sentences": {
+        "pt": {
+          "text": "Eu tomei o remédio esta manhã.",
+          "tokens": [
+            "Eu",
+            "tomei",
+            "o",
+            "remédio",
+            "esta",
+            "manhã."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "tomar",
+              "pos": "verb",
+              "meta": {
+                "tense": "past",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 3,
+              "lemma": "remédio",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "I took the medicine this morning.",
+          "tokens": [
+            "I",
+            "took",
+            "the",
+            "medicine",
+            "this",
+            "morning."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "take",
+              "pos": "verb",
+              "meta": {
+                "tense": "past",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 3,
+              "lemma": "medicine",
+              "pos": "noun",
+              "meta": {}
+            }
+          ]
+        },
+        "es": {
+          "text": "He tomado la medicina esta mañana.",
+          "tokens": [
+            "He",
+            "tomado",
+            "la",
+            "medicina",
+            "esta",
+            "mañana."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "tomar",
+              "pos": "verb",
+              "meta": {
+                "tense": "past",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 3,
+              "lemma": "medicina",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "Ho preso la medicina stamattina.",
+          "tokens": [
+            "Ho",
+            "preso",
+            "la",
+            "medicina",
+            "stamattina."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "prendere",
+              "pos": "verb",
+              "meta": {
+                "tense": "past",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 3,
+              "lemma": "medicina",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0029",
+      "cefr": "A2",
+      "theme": [
+        "tempo livre"
+      ],
+      "cognacy": "high",
+      "false_friend": false,
+      "false_friend_note": null,
+      "sentences": {
+        "pt": {
+          "text": "Nós dançamos na festa ontem.",
+          "tokens": [
+            "Nós",
+            "dançamos",
+            "na",
+            "festa",
+            "ontem."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "dançar",
+              "pos": "verb",
+              "meta": {
+                "tense": "past",
+                "person": "1pl"
+              }
+            },
+            {
+              "token_index": 3,
+              "lemma": "festa",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "We danced at the party yesterday.",
+          "tokens": [
+            "We",
+            "danced",
+            "at",
+            "the",
+            "party",
+            "yesterday."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "dance",
+              "pos": "verb",
+              "meta": {
+                "tense": "past",
+                "person": "1pl"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "party",
+              "pos": "noun",
+              "meta": {}
+            }
+          ]
+        },
+        "es": {
+          "text": "Hemos bailado en la fiesta ayer.",
+          "tokens": [
+            "Hemos",
+            "bailado",
+            "en",
+            "la",
+            "fiesta",
+            "ayer."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "bailar",
+              "pos": "verb",
+              "meta": {
+                "tense": "past",
+                "person": "1pl"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "fiesta",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "Abbiamo ballato alla festa ieri.",
+          "tokens": [
+            "Abbiamo",
+            "ballato",
+            "alla",
+            "festa",
+            "ieri."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "ballare",
+              "pos": "verb",
+              "meta": {
+                "tense": "past",
+                "person": "1pl"
+              }
+            },
+            {
+              "token_index": 3,
+              "lemma": "festa",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0030",
+      "cefr": "A2",
+      "theme": [
+        "trabalho",
+        "cotidiano"
+      ],
+      "cognacy": "low",
+      "false_friend": false,
+      "false_friend_note": null,
+      "sentences": {
+        "pt": {
+          "text": "O escritório abre às nove.",
+          "tokens": [
+            "O",
+            "escritório",
+            "abre",
+            "às",
+            "nove."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "escritório",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 2,
+              "lemma": "abrir",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "3sg"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "The office opens at nine.",
+          "tokens": [
+            "The",
+            "office",
+            "opens",
+            "at",
+            "nine."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "office",
+              "pos": "noun",
+              "meta": {}
+            },
+            {
+              "token_index": 2,
+              "lemma": "open",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "3sg"
+              }
+            }
+          ]
+        },
+        "es": {
+          "text": "La oficina abre a las nueve.",
+          "tokens": [
+            "La",
+            "oficina",
+            "abre",
+            "a",
+            "las",
+            "nueve."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "oficina",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 2,
+              "lemma": "abrir",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "3sg"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "L'ufficio apre alle nove.",
+          "tokens": [
+            "L'ufficio",
+            "apre",
+            "alle",
+            "nove."
+          ],
+          "targets": [
+            {
+              "token_index": 0,
+              "lemma": "ufficio",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 1,
+              "lemma": "aprire",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "3sg"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0031",
+      "cefr": "A2",
+      "theme": [
+        "cidade"
+      ],
+      "cognacy": "low",
+      "false_friend": false,
+      "false_friend_note": null,
+      "sentences": {
+        "pt": {
+          "text": "A loja fica ao lado da praça.",
+          "tokens": [
+            "A",
+            "loja",
+            "fica",
+            "ao",
+            "lado",
+            "da",
+            "praça."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "loja",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 6,
+              "lemma": "praça",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "The shop is next to the square.",
+          "tokens": [
+            "The",
+            "shop",
+            "is",
+            "next",
+            "to",
+            "the",
+            "square."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "shop",
+              "pos": "noun",
+              "meta": {}
+            },
+            {
+              "token_index": 6,
+              "lemma": "square",
+              "pos": "noun",
+              "meta": {}
+            }
+          ]
+        },
+        "es": {
+          "text": "La tienda está al lado de la plaza.",
+          "tokens": [
+            "La",
+            "tienda",
+            "está",
+            "al",
+            "lado",
+            "de",
+            "la",
+            "plaza."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "tienda",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 7,
+              "lemma": "plaza",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "Il negozio è accanto alla piazza.",
+          "tokens": [
+            "Il",
+            "negozio",
+            "è",
+            "accanto",
+            "alla",
+            "piazza."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "negozio",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 5,
+              "lemma": "piazza",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0032",
+      "cefr": "A2",
+      "theme": [
+        "cotidiano"
+      ],
+      "cognacy": "high",
+      "false_friend": false,
+      "false_friend_note": null,
+      "sentences": {
+        "pt": {
+          "text": "Eles chegaram tarde em casa.",
+          "tokens": [
+            "Eles",
+            "chegaram",
+            "tarde",
+            "em",
+            "casa."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "chegar",
+              "pos": "verb",
+              "meta": {
+                "tense": "past",
+                "person": "3pl"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "They arrived home late.",
+          "tokens": [
+            "They",
+            "arrived",
+            "home",
+            "late."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "arrive",
+              "pos": "verb",
+              "meta": {
+                "tense": "past",
+                "person": "3pl"
+              }
+            }
+          ]
+        },
+        "es": {
+          "text": "Han llegado tarde a casa.",
+          "tokens": [
+            "Han",
+            "llegado",
+            "tarde",
+            "a",
+            "casa."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "llegar",
+              "pos": "verb",
+              "meta": {
+                "tense": "past",
+                "person": "3pl"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "Sono arrivati tardi a casa.",
+          "tokens": [
+            "Sono",
+            "arrivati",
+            "tardi",
+            "a",
+            "casa."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "arrivare",
+              "pos": "verb",
+              "meta": {
+                "tense": "past",
+                "person": "3pl"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0033",
+      "cefr": "A2",
+      "theme": [
+        "trabalho"
+      ],
+      "cognacy": "medium",
+      "false_friend": true,
+      "false_friend_note": "Em inglês, 'salary' é comum e não causa confusão, mas cuidado: em PT 'salário' é mensal e não se confunde com 'ordenado' do ES.",
+      "sentences": {
+        "pt": {
+          "text": "O salário dela é bom.",
+          "tokens": [
+            "O",
+            "salário",
+            "dela",
+            "é",
+            "bom."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "salário",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "bom",
+              "pos": "adj",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "Her salary is good.",
+          "tokens": [
+            "Her",
+            "salary",
+            "is",
+            "good."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "salary",
+              "pos": "noun",
+              "meta": {}
+            },
+            {
+              "token_index": 3,
+              "lemma": "good",
+              "pos": "adj",
+              "meta": {}
+            }
+          ]
+        },
+        "es": {
+          "text": "Su sueldo es bueno.",
+          "tokens": [
+            "Su",
+            "sueldo",
+            "es",
+            "bueno."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "sueldo",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 3,
+              "lemma": "bueno",
+              "pos": "adj",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "Il suo stipendio è buono.",
+          "tokens": [
+            "Il",
+            "suo",
+            "stipendio",
+            "è",
+            "buono."
+          ],
+          "targets": [
+            {
+              "token_index": 2,
+              "lemma": "stipendio",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "buono",
+              "pos": "adj",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0034",
+      "cefr": "A2",
+      "theme": [
+        "saúde"
+      ],
+      "cognacy": "high",
+      "false_friend": false,
+      "false_friend_note": null,
+      "sentences": {
+        "pt": {
+          "text": "Eu preciso dormir oito horas.",
+          "tokens": [
+            "Eu",
+            "preciso",
+            "dormir",
+            "oito",
+            "horas."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "precisar",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 2,
+              "lemma": "dormir",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "1sg"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "I need to sleep eight hours.",
+          "tokens": [
+            "I",
+            "need",
+            "to",
+            "sleep",
+            "eight",
+            "hours."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "need",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 3,
+              "lemma": "sleep",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "1sg"
+              }
+            }
+          ]
+        },
+        "es": {
+          "text": "Necesito dormir ocho horas.",
+          "tokens": [
+            "Necesito",
+            "dormir",
+            "ocho",
+            "horas."
+          ],
+          "targets": [
+            {
+              "token_index": 0,
+              "lemma": "necesitar",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 1,
+              "lemma": "dormir",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "1sg"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "Ho bisogno di dormire otto ore.",
+          "tokens": [
+            "Ho",
+            "bisogno",
+            "di",
+            "dormire",
+            "otto",
+            "ore."
+          ],
+          "targets": [
+            {
+              "token_index": 0,
+              "lemma": "avere",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 3,
+              "lemma": "dormire",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "1sg"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0035",
+      "cefr": "A2",
+      "theme": [
+        "tempo livre"
+      ],
+      "cognacy": "medium",
+      "false_friend": false,
+      "false_friend_note": null,
+      "sentences": {
+        "pt": {
+          "text": "Vamos viajar para a praia.",
+          "tokens": [
+            "Vamos",
+            "viajar",
+            "para",
+            "a",
+            "praia."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "viajar",
+              "pos": "verb",
+              "meta": {
+                "tense": "future",
+                "person": "1pl"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "praia",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "We are going to travel to the beach.",
+          "tokens": [
+            "We",
+            "are",
+            "going",
+            "to",
+            "travel",
+            "to",
+            "the",
+            "beach."
+          ],
+          "targets": [
+            {
+              "token_index": 4,
+              "lemma": "travel",
+              "pos": "verb",
+              "meta": {
+                "tense": "future",
+                "person": "1pl"
+              }
+            },
+            {
+              "token_index": 7,
+              "lemma": "beach",
+              "pos": "noun",
+              "meta": {}
+            }
+          ]
+        },
+        "es": {
+          "text": "Vamos a viajar a la playa.",
+          "tokens": [
+            "Vamos",
+            "a",
+            "viajar",
+            "a",
+            "la",
+            "playa."
+          ],
+          "targets": [
+            {
+              "token_index": 2,
+              "lemma": "viajar",
+              "pos": "verb",
+              "meta": {
+                "tense": "future",
+                "person": "1pl"
+              }
+            },
+            {
+              "token_index": 5,
+              "lemma": "playa",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "Andremo al mare in viaggio.",
+          "tokens": [
+            "Andremo",
+            "al",
+            "mare",
+            "in",
+            "viaggio."
+          ],
+          "targets": [
+            {
+              "token_index": 0,
+              "lemma": "andare",
+              "pos": "verb",
+              "meta": {
+                "tense": "future",
+                "person": "1pl"
+              }
+            },
+            {
+              "token_index": 2,
+              "lemma": "mare",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0036",
+      "cefr": "A2",
+      "theme": [
+        "cotidiano"
+      ],
+      "cognacy": "low",
+      "false_friend": false,
+      "false_friend_note": null,
+      "sentences": {
+        "pt": {
+          "text": "Esqueci as chaves no trabalho.",
+          "tokens": [
+            "Esqueci",
+            "as",
+            "chaves",
+            "no",
+            "trabalho."
+          ],
+          "targets": [
+            {
+              "token_index": 0,
+              "lemma": "esquecer",
+              "pos": "verb",
+              "meta": {
+                "tense": "past",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 2,
+              "lemma": "chave",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "pl"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "I forgot the keys at work.",
+          "tokens": [
+            "I",
+            "forgot",
+            "the",
+            "keys",
+            "at",
+            "work."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "forget",
+              "pos": "verb",
+              "meta": {
+                "tense": "past",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 3,
+              "lemma": "key",
+              "pos": "noun",
+              "meta": {}
+            }
+          ]
+        },
+        "es": {
+          "text": "He olvidado las llaves en el trabajo.",
+          "tokens": [
+            "He",
+            "olvidado",
+            "las",
+            "llaves",
+            "en",
+            "el",
+            "trabajo."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "olvidar",
+              "pos": "verb",
+              "meta": {
+                "tense": "past",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 3,
+              "lemma": "llave",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "pl"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "Ho dimenticato le chiavi al lavoro.",
+          "tokens": [
+            "Ho",
+            "dimenticato",
+            "le",
+            "chiavi",
+            "al",
+            "lavoro."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "dimenticare",
+              "pos": "verb",
+              "meta": {
+                "tense": "past",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 3,
+              "lemma": "chiave",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "pl"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0037",
+      "cefr": "A2",
+      "theme": [
+        "trabalho"
+      ],
+      "cognacy": "high",
+      "false_friend": false,
+      "false_friend_note": null,
+      "sentences": {
+        "pt": {
+          "text": "A reunião começa em dez minutos.",
+          "tokens": [
+            "A",
+            "reunião",
+            "começa",
+            "em",
+            "dez",
+            "minutos."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "reunião",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 2,
+              "lemma": "começar",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "3sg"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "The meeting starts in ten minutes.",
+          "tokens": [
+            "The",
+            "meeting",
+            "starts",
+            "in",
+            "ten",
+            "minutes."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "meeting",
+              "pos": "noun",
+              "meta": {}
+            },
+            {
+              "token_index": 2,
+              "lemma": "start",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "3sg"
+              }
+            }
+          ]
+        },
+        "es": {
+          "text": "La reunión empieza en diez minutos.",
+          "tokens": [
+            "La",
+            "reunión",
+            "empieza",
+            "en",
+            "diez",
+            "minutos."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "reunión",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 2,
+              "lemma": "empezar",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "3sg"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "La riunione inizia tra dieci minuti.",
+          "tokens": [
+            "La",
+            "riunione",
+            "inizia",
+            "tra",
+            "dieci",
+            "minuti."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "riunione",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 2,
+              "lemma": "iniziare",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "3sg"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0038",
+      "cefr": "A2",
+      "theme": [
+        "saúde"
+      ],
+      "cognacy": "low",
+      "false_friend": true,
+      "false_friend_note": "Em espanhol, 'constipado' significa resfriado; em PT 'constipado' também é resfriado (em PT-PT) mas em PT-BR significa com prisão de ventre. Contexto regional importa.",
+      "sentences": {
+        "pt": {
+          "text": "Estou resfriado desde segunda.",
+          "tokens": [
+            "Estou",
+            "resfriado",
+            "desde",
+            "segunda."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "resfriado",
+              "pos": "adj",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "I have had a cold since Monday.",
+          "tokens": [
+            "I",
+            "have",
+            "had",
+            "a",
+            "cold",
+            "since",
+            "Monday."
+          ],
+          "targets": [
+            {
+              "token_index": 4,
+              "lemma": "cold",
+              "pos": "noun",
+              "meta": {}
+            }
+          ]
+        },
+        "es": {
+          "text": "Estoy constipado desde el lunes.",
+          "tokens": [
+            "Estoy",
+            "constipado",
+            "desde",
+            "el",
+            "lunes."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "constipado",
+              "pos": "adj",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "Sono raffreddato da lunedì.",
+          "tokens": [
+            "Sono",
+            "raffreddato",
+            "da",
+            "lunedì."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "raffreddato",
+              "pos": "adj",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0039",
+      "cefr": "A2",
+      "theme": [
+        "tempo livre"
+      ],
+      "cognacy": "medium",
+      "false_friend": false,
+      "false_friend_note": null,
+      "sentences": {
+        "pt": {
+          "text": "Vou ler um livro interessante.",
+          "tokens": [
+            "Vou",
+            "ler",
+            "um",
+            "livro",
+            "interessante."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "ler",
+              "pos": "verb",
+              "meta": {
+                "tense": "future",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "interessante",
+              "pos": "adj",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "I am going to read an interesting book.",
+          "tokens": [
+            "I",
+            "am",
+            "going",
+            "to",
+            "read",
+            "an",
+            "interesting",
+            "book."
+          ],
+          "targets": [
+            {
+              "token_index": 4,
+              "lemma": "read",
+              "pos": "verb",
+              "meta": {
+                "tense": "future",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 6,
+              "lemma": "interesting",
+              "pos": "adj",
+              "meta": {}
+            }
+          ]
+        },
+        "es": {
+          "text": "Voy a leer un libro interesante.",
+          "tokens": [
+            "Voy",
+            "a",
+            "leer",
+            "un",
+            "libro",
+            "interesante."
+          ],
+          "targets": [
+            {
+              "token_index": 2,
+              "lemma": "leer",
+              "pos": "verb",
+              "meta": {
+                "tense": "future",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 5,
+              "lemma": "interesante",
+              "pos": "adj",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "Leggerò un libro interessante.",
+          "tokens": [
+            "Leggerò",
+            "un",
+            "libro",
+            "interessante."
+          ],
+          "targets": [
+            {
+              "token_index": 0,
+              "lemma": "leggere",
+              "pos": "verb",
+              "meta": {
+                "tense": "future",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 3,
+              "lemma": "interessante",
+              "pos": "adj",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0040",
+      "cefr": "A2",
+      "theme": [
+        "cidade",
+        "cotidiano"
+      ],
+      "cognacy": "medium",
+      "false_friend": false,
+      "false_friend_note": null,
+      "sentences": {
+        "pt": {
+          "text": "O ônibus passa a cada hora.",
+          "tokens": [
+            "O",
+            "ônibus",
+            "passa",
+            "a",
+            "cada",
+            "hora."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "ônibus",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 5,
+              "lemma": "hora",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "The bus comes every hour.",
+          "tokens": [
+            "The",
+            "bus",
+            "comes",
+            "every",
+            "hour."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "bus",
+              "pos": "noun",
+              "meta": {}
+            },
+            {
+              "token_index": 4,
+              "lemma": "hour",
+              "pos": "noun",
+              "meta": {}
+            }
+          ]
+        },
+        "es": {
+          "text": "El autobús pasa cada hora.",
+          "tokens": [
+            "El",
+            "autobús",
+            "pasa",
+            "cada",
+            "hora."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "autobús",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "hora",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "L'autobus passa ogni ora.",
+          "tokens": [
+            "L'autobus",
+            "passa",
+            "ogni",
+            "ora."
+          ],
+          "targets": [
+            {
+              "token_index": 0,
+              "lemma": "autobus",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 3,
+              "lemma": "ora",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0041",
+      "cefr": "B1",
+      "theme": [
+        "saúde",
+        "família"
+      ],
+      "cognacy": "low",
+      "false_friend": true,
+      "false_friend_note": "Em espanhol, 'embarazada' significa grávida, não embaraçada/constrangida.",
+      "sentences": {
+        "pt": {
+          "text": "Minha irmã está grávida de três meses.",
+          "tokens": [
+            "Minha",
+            "irmã",
+            "está",
+            "grávida",
+            "de",
+            "três",
+            "meses."
+          ],
+          "targets": [
+            {
+              "token_index": 3,
+              "lemma": "grávida",
+              "pos": "adj",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "My sister is three months pregnant.",
+          "tokens": [
+            "My",
+            "sister",
+            "is",
+            "three",
+            "months",
+            "pregnant."
+          ],
+          "targets": [
+            {
+              "token_index": 5,
+              "lemma": "pregnant",
+              "pos": "adj",
+              "meta": {}
+            }
+          ]
+        },
+        "es": {
+          "text": "Mi hermana está embarazada de tres meses.",
+          "tokens": [
+            "Mi",
+            "hermana",
+            "está",
+            "embarazada",
+            "de",
+            "tres",
+            "meses."
+          ],
+          "targets": [
+            {
+              "token_index": 3,
+              "lemma": "embarazada",
+              "pos": "adj",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "Mia sorella è incinta di tre mesi.",
+          "tokens": [
+            "Mia",
+            "sorella",
+            "è",
+            "incinta",
+            "di",
+            "tre",
+            "mesi."
+          ],
+          "targets": [
+            {
+              "token_index": 3,
+              "lemma": "incinto",
+              "pos": "adj",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0042",
+      "cefr": "B1",
+      "theme": [
+        "comida",
+        "cotidiano"
+      ],
+      "cognacy": "low",
+      "false_friend": true,
+      "false_friend_note": "Em italiano, 'burro' significa manteiga, não burro (animal ou pessoa pouco inteligente) como em português.",
+      "sentences": {
+        "pt": {
+          "text": "Eu comprei manteiga no mercado.",
+          "tokens": [
+            "Eu",
+            "comprei",
+            "manteiga",
+            "no",
+            "mercado."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "comprar",
+              "pos": "verb",
+              "meta": {
+                "tense": "past",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 2,
+              "lemma": "manteiga",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "I bought butter at the market.",
+          "tokens": [
+            "I",
+            "bought",
+            "butter",
+            "at",
+            "the",
+            "market."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "buy",
+              "pos": "verb",
+              "meta": {
+                "tense": "past",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 2,
+              "lemma": "butter",
+              "pos": "noun",
+              "meta": {}
+            }
+          ]
+        },
+        "es": {
+          "text": "He comprado mantequilla en el mercado.",
+          "tokens": [
+            "He",
+            "comprado",
+            "mantequilla",
+            "en",
+            "el",
+            "mercado."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "comprar",
+              "pos": "verb",
+              "meta": {
+                "tense": "past",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 2,
+              "lemma": "mantequilla",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "Ho comprato il burro al mercato.",
+          "tokens": [
+            "Ho",
+            "comprato",
+            "il",
+            "burro",
+            "al",
+            "mercato."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "comprare",
+              "pos": "verb",
+              "meta": {
+                "tense": "past",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 3,
+              "lemma": "burro",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0043",
+      "cefr": "B1",
+      "theme": [
+        "cotidiano",
+        "opiniões"
+      ],
+      "cognacy": "low",
+      "false_friend": true,
+      "false_friend_note": "Em espanhol, 'largo' significa longo/comprido, não largo (wide) como em português. Em PT, 'largo' é o oposto de estreito.",
+      "sentences": {
+        "pt": {
+          "text": "O rio é muito comprido aqui.",
+          "tokens": [
+            "O",
+            "rio",
+            "é",
+            "muito",
+            "comprido",
+            "aqui."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "rio",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "comprido",
+              "pos": "adj",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "The river is very long here.",
+          "tokens": [
+            "The",
+            "river",
+            "is",
+            "very",
+            "long",
+            "here."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "river",
+              "pos": "noun",
+              "meta": {}
+            },
+            {
+              "token_index": 4,
+              "lemma": "long",
+              "pos": "adj",
+              "meta": {}
+            }
+          ]
+        },
+        "es": {
+          "text": "El río es muy largo aquí.",
+          "tokens": [
+            "El",
+            "río",
+            "es",
+            "muy",
+            "largo",
+            "aquí."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "río",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "largo",
+              "pos": "adj",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "Il fiume è molto lungo qui.",
+          "tokens": [
+            "Il",
+            "fiume",
+            "è",
+            "molto",
+            "lungo",
+            "qui."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "fiume",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "lungo",
+              "pos": "adj",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0044",
+      "cefr": "B1",
+      "theme": [
+        "cotidiano",
+        "emoções"
+      ],
+      "cognacy": "low",
+      "false_friend": true,
+      "false_friend_note": "Em italiano, 'caldo' significa quente, não caldo (sopa/líquido) como em português.",
+      "sentences": {
+        "pt": {
+          "text": "O chá ainda está quente demais.",
+          "tokens": [
+            "O",
+            "chá",
+            "ainda",
+            "está",
+            "quente",
+            "demais."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "chá",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "quente",
+              "pos": "adj",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "The tea is still too hot.",
+          "tokens": [
+            "The",
+            "tea",
+            "is",
+            "still",
+            "too",
+            "hot."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "tea",
+              "pos": "noun",
+              "meta": {}
+            },
+            {
+              "token_index": 5,
+              "lemma": "hot",
+              "pos": "adj",
+              "meta": {}
+            }
+          ]
+        },
+        "es": {
+          "text": "El té todavía está demasiado caliente.",
+          "tokens": [
+            "El",
+            "té",
+            "todavía",
+            "está",
+            "demasiado",
+            "caliente."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "té",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 5,
+              "lemma": "caliente",
+              "pos": "adj",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "Il tè è ancora troppo caldo.",
+          "tokens": [
+            "Il",
+            "tè",
+            "è",
+            "ancora",
+            "troppo",
+            "caldo."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "tè",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 5,
+              "lemma": "caldo",
+              "pos": "adj",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0045",
+      "cefr": "B1",
+      "theme": [
+        "comida",
+        "opiniões"
+      ],
+      "cognacy": "low",
+      "false_friend": true,
+      "false_friend_note": "Em espanhol, 'exquisito' significa requintado/delicioso; em PT 'esquisito' significa estranho/bizarro.",
+      "sentences": {
+        "pt": {
+          "text": "O jantar estava absolutamente delicioso.",
+          "tokens": [
+            "O",
+            "jantar",
+            "estava",
+            "absolutamente",
+            "delicioso."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "jantar",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "delicioso",
+              "pos": "adj",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "The dinner was absolutely delicious.",
+          "tokens": [
+            "The",
+            "dinner",
+            "was",
+            "absolutely",
+            "delicious."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "dinner",
+              "pos": "noun",
+              "meta": {}
+            },
+            {
+              "token_index": 4,
+              "lemma": "delicious",
+              "pos": "adj",
+              "meta": {}
+            }
+          ]
+        },
+        "es": {
+          "text": "La cena estuvo absolutamente exquisita.",
+          "tokens": [
+            "La",
+            "cena",
+            "estuvo",
+            "absolutamente",
+            "exquisita."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "cena",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "exquisito",
+              "pos": "adj",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "La cena era assolutamente squisita.",
+          "tokens": [
+            "La",
+            "cena",
+            "era",
+            "assolutamente",
+            "squisita."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "cena",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "squisito",
+              "pos": "adj",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0046",
+      "cefr": "B1",
+      "theme": [
+        "emoções"
+      ],
+      "cognacy": "medium",
+      "false_friend": false,
+      "false_friend_note": null,
+      "sentences": {
+        "pt": {
+          "text": "Eu fiquei triste com a notícia.",
+          "tokens": [
+            "Eu",
+            "fiquei",
+            "triste",
+            "com",
+            "a",
+            "notícia."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "ficar",
+              "pos": "verb",
+              "meta": {
+                "tense": "past",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 2,
+              "lemma": "triste",
+              "pos": "adj",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "I became sad with the news.",
+          "tokens": [
+            "I",
+            "became",
+            "sad",
+            "with",
+            "the",
+            "news."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "become",
+              "pos": "verb",
+              "meta": {
+                "tense": "past",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 2,
+              "lemma": "sad",
+              "pos": "adj",
+              "meta": {}
+            }
+          ]
+        },
+        "es": {
+          "text": "Me puse triste con la noticia.",
+          "tokens": [
+            "Me",
+            "puse",
+            "triste",
+            "con",
+            "la",
+            "noticia."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "poner",
+              "pos": "verb",
+              "meta": {
+                "tense": "past",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 2,
+              "lemma": "triste",
+              "pos": "adj",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "Sono diventato triste con la notizia.",
+          "tokens": [
+            "Sono",
+            "diventato",
+            "triste",
+            "con",
+            "la",
+            "notizia."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "diventare",
+              "pos": "verb",
+              "meta": {
+                "tense": "past",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 2,
+              "lemma": "triste",
+              "pos": "adj",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0047",
+      "cefr": "B1",
+      "theme": [
+        "opiniões"
+      ],
+      "cognacy": "high",
+      "false_friend": false,
+      "false_friend_note": null,
+      "sentences": {
+        "pt": {
+          "text": "Eu acho que ele tem razão.",
+          "tokens": [
+            "Eu",
+            "acho",
+            "que",
+            "ele",
+            "tem",
+            "razão."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "achar",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 5,
+              "lemma": "razão",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "I think he is right.",
+          "tokens": [
+            "I",
+            "think",
+            "he",
+            "is",
+            "right."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "think",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "right",
+              "pos": "noun",
+              "meta": {}
+            }
+          ]
+        },
+        "es": {
+          "text": "Creo que él tiene razón.",
+          "tokens": [
+            "Creo",
+            "que",
+            "él",
+            "tiene",
+            "razón."
+          ],
+          "targets": [
+            {
+              "token_index": 0,
+              "lemma": "creer",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "razón",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "Penso che lui abbia ragione.",
+          "tokens": [
+            "Penso",
+            "che",
+            "lui",
+            "abbia",
+            "ragione."
+          ],
+          "targets": [
+            {
+              "token_index": 0,
+              "lemma": "pensare",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "ragione",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0048",
+      "cefr": "B1",
+      "theme": [
+        "cotidiano",
+        "emoções"
+      ],
+      "cognacy": "medium",
+      "false_friend": false,
+      "false_friend_note": null,
+      "sentences": {
+        "pt": {
+          "text": "Vou tentar explicar a situação.",
+          "tokens": [
+            "Vou",
+            "tentar",
+            "explicar",
+            "a",
+            "situação."
+          ],
+          "targets": [
+            {
+              "token_index": 1,
+              "lemma": "tentar",
+              "pos": "verb",
+              "meta": {
+                "tense": "future",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 2,
+              "lemma": "explicar",
+              "pos": "verb",
+              "meta": {
+                "tense": "future",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "situação",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "I am going to try to explain the situation.",
+          "tokens": [
+            "I",
+            "am",
+            "going",
+            "to",
+            "try",
+            "to",
+            "explain",
+            "the",
+            "situation."
+          ],
+          "targets": [
+            {
+              "token_index": 4,
+              "lemma": "try",
+              "pos": "verb",
+              "meta": {
+                "tense": "future",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 6,
+              "lemma": "explain",
+              "pos": "verb",
+              "meta": {
+                "tense": "future",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 8,
+              "lemma": "situation",
+              "pos": "noun",
+              "meta": {}
+            }
+          ]
+        },
+        "es": {
+          "text": "Voy a intentar explicar la situación.",
+          "tokens": [
+            "Voy",
+            "a",
+            "intentar",
+            "explicar",
+            "la",
+            "situación."
+          ],
+          "targets": [
+            {
+              "token_index": 2,
+              "lemma": "intentar",
+              "pos": "verb",
+              "meta": {
+                "tense": "future",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 3,
+              "lemma": "explicar",
+              "pos": "verb",
+              "meta": {
+                "tense": "future",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 5,
+              "lemma": "situación",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "Proverò a spiegare la situazione.",
+          "tokens": [
+            "Proverò",
+            "a",
+            "spiegare",
+            "la",
+            "situazione."
+          ],
+          "targets": [
+            {
+              "token_index": 0,
+              "lemma": "provare",
+              "pos": "verb",
+              "meta": {
+                "tense": "future",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 2,
+              "lemma": "spiegare",
+              "pos": "verb",
+              "meta": {
+                "tense": "future",
+                "person": "1sg"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "situazione",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0049",
+      "cefr": "B1",
+      "theme": [
+        "emoções",
+        "opiniões"
+      ],
+      "cognacy": "medium",
+      "false_friend": false,
+      "false_friend_note": null,
+      "sentences": {
+        "pt": {
+          "text": "Ela tem medo de falar em público.",
+          "tokens": [
+            "Ela",
+            "tem",
+            "medo",
+            "de",
+            "falar",
+            "em",
+            "público."
+          ],
+          "targets": [
+            {
+              "token_index": 2,
+              "lemma": "medo",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "falar",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "3sg"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "She is afraid of speaking in public.",
+          "tokens": [
+            "She",
+            "is",
+            "afraid",
+            "of",
+            "speaking",
+            "in",
+            "public."
+          ],
+          "targets": [
+            {
+              "token_index": 2,
+              "lemma": "afraid",
+              "pos": "noun",
+              "meta": {}
+            },
+            {
+              "token_index": 4,
+              "lemma": "speak",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "3sg"
+              }
+            }
+          ]
+        },
+        "es": {
+          "text": "Ella tiene miedo de hablar en público.",
+          "tokens": [
+            "Ella",
+            "tiene",
+            "miedo",
+            "de",
+            "hablar",
+            "en",
+            "público."
+          ],
+          "targets": [
+            {
+              "token_index": 2,
+              "lemma": "miedo",
+              "pos": "noun",
+              "meta": {
+                "gender": "m",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "hablar",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "3sg"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "Lei ha paura di parlare in pubblico.",
+          "tokens": [
+            "Lei",
+            "ha",
+            "paura",
+            "di",
+            "parlare",
+            "in",
+            "pubblico."
+          ],
+          "targets": [
+            {
+              "token_index": 2,
+              "lemma": "paura",
+              "pos": "noun",
+              "meta": {
+                "gender": "f",
+                "number": "sg"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "parlare",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "3sg"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0050",
+      "cefr": "B1",
+      "theme": [
+        "cotidiano",
+        "opiniões"
+      ],
+      "cognacy": "medium",
+      "false_friend": false,
+      "false_friend_note": null,
+      "sentences": {
+        "pt": {
+          "text": "Nós já decidimos mudar de casa.",
+          "tokens": [
+            "Nós",
+            "já",
+            "decidimos",
+            "mudar",
+            "de",
+            "casa."
+          ],
+          "targets": [
+            {
+              "token_index": 2,
+              "lemma": "decidir",
+              "pos": "verb",
+              "meta": {
+                "tense": "past",
+                "person": "1pl"
+              }
+            },
+            {
+              "token_index": 3,
+              "lemma": "mudar",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "1pl"
+              }
+            }
+          ]
+        },
+        "en": {
+          "text": "We have already decided to move house.",
+          "tokens": [
+            "We",
+            "have",
+            "already",
+            "decided",
+            "to",
+            "move",
+            "house."
+          ],
+          "targets": [
+            {
+              "token_index": 3,
+              "lemma": "decide",
+              "pos": "verb",
+              "meta": {
+                "tense": "past",
+                "person": "1pl"
+              }
+            },
+            {
+              "token_index": 5,
+              "lemma": "move",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "1pl"
+              }
+            }
+          ]
+        },
+        "es": {
+          "text": "Ya hemos decidido mudarnos de casa.",
+          "tokens": [
+            "Ya",
+            "hemos",
+            "decidido",
+            "mudarnos",
+            "de",
+            "casa."
+          ],
+          "targets": [
+            {
+              "token_index": 2,
+              "lemma": "decidir",
+              "pos": "verb",
+              "meta": {
+                "tense": "past",
+                "person": "1pl"
+              }
+            },
+            {
+              "token_index": 3,
+              "lemma": "mudarse",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "1pl"
+              }
+            }
+          ]
+        },
+        "it": {
+          "text": "Abbiamo già deciso di cambiare casa.",
+          "tokens": [
+            "Abbiamo",
+            "già",
+            "deciso",
+            "di",
+            "cambiare",
+            "casa."
+          ],
+          "targets": [
+            {
+              "token_index": 2,
+              "lemma": "decidere",
+              "pos": "verb",
+              "meta": {
+                "tense": "past",
+                "person": "1pl"
+              }
+            },
+            {
+              "token_index": 4,
+              "lemma": "cambiare",
+              "pos": "verb",
+              "meta": {
+                "tense": "present",
+                "person": "1pl"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
